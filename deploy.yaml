@@ -1,18 +1,18 @@
 import: 
-    - recipe/laravel.php
-    - contrib/npm.php
-  
-  config:
-    repository: 'https://github.com/lgabrielc/intertec.git'
-  
-  hosts:
-    Intertec:
-      remote_user: root
-      hostname: redintertec.com
-      deploy_path: '/var/www/{{hostname}}'
-  
-  tasks:
-    deploy:
+  - recipe/laravel.php
+  - contrib/npm.php
+
+config:
+  repository: 'https://github.com/lgabrielc/intertec.git'
+
+hosts:
+  curso:
+    remote_user: root
+    hostname: redintertec.com
+    deploy_path: '/var/www/{{hostname}}'
+
+tasks:
+  deploy:
     - deploy:prepare
     - deploy:vendors
     - artisan:storage:link
@@ -24,12 +24,10 @@ import:
     - npm:install
     - build
     - deploy:publish
-    
-    build:
-      - cd: "{{release_path}}"
-      - run: npm run build
-  
-  
-  after:
-    deploy:failed: deploy:unlock
-  
+
+  build:
+    - cd: "{{release_path}}"
+    - run: "npm run build"
+
+after:
+  deploy:failed: deploy:unlock
