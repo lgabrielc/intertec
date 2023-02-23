@@ -6,7 +6,7 @@ config:
   repository: 'https://github.com/lgabrielc/intertec.git'
 
 hosts:
-  curso:
+  intertec:
     remote_user: root
     hostname: redintertec.com
     deploy_path: '/var/www/{{hostname}}'
