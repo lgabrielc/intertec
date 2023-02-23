@@ -9,7 +9,7 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
                 {{--<x-welcome />--}}
-                <h1>Prueba de deploy al hacer un push</h1>
+                <h1>Prueba 2 de deploy al hacer un push</h1>
             </div>
         </div>
     </div>
