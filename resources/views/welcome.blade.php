@@ -36,22 +36,39 @@
     </div>
     <div class="flex items-center justify-center">
         <div class="relative grid grid-cols-2 -my-20 md:grid-cols-4 ">
-            <div class="flex flex-col w-64 p-2 mx-2 mb-2 bg-white border-2 shadow-lg md:mx-4 h-80 border-slate-200">
-                <img src="images/redes.jpg" alt="">
-                <p>Servicio Técnico</p>
+            <div
+                class="flex flex-col items-center w-64 p-2 mx-2 mb-2 bg-white border-2 rounded-lg shadow-lg md:mx-4 h-80 border-slate-200">
+                <img class="object-cover w-64 h-32 border rounded-sm rounded-lg border-x-slate-300"
+                    src="images/redes.jpg" alt="">
+                <label class="py-1 text-xl font-bold tracking-tight ">Servicio Técnico</label>
+                <p class="text-sm font-medium text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ipsa accusamus incidunt, nemo molestias
+                    voluptatibus esse magni quibusdam?</p>
             </div>
-            <div class="flex flex-col w-64 p-2 mx-2 mb-2 bg-white border-2 shadow-lg md:mx-4 h-80 border-slate-200">
-                <img src="images/redes.jpg" alt="">
-                <p>Administración de Redes</p>
+            <div
+                class="flex flex-col items-center w-64 p-2 mx-2 mb-2 bg-white border-2 rounded-lg shadow-lg md:mx-4 h-80 border-slate-200">
+                <img class="object-cover w-64 h-32 border rounded-lg border-x-slate-300"
+                    src="https://fp.liceolapaz.com/wp-content/uploads/2020/05/CS.Informatica3.1.jpg" alt="">
+                <label class="py-1 text-xl font-bold tracking-tight text-gray-900 ">Administración de Redes</label>
+                <p class="text-sm font-medium text-gray-700">Hola</p>
             </div>
 
-            <div class="flex flex-col w-64 p-2 mx-2 mb-2 bg-white border-2 shadow-lg md:mx-4 h-80 border-slate-200">
-                <img src="images/redes.jpg" alt="">
-                <p>Soporte 24/7</p>
+            <div
+                class="flex flex-col items-center w-64 p-2 mx-2 mb-2 bg-white border-2 rounded-lg shadow-lg md:mx-4 h-80 border-slate-200">
+                <img class="object-cover w-64 h-32 border rounded-lg border-x-slate-300"
+                    src="https://cdn-fljjp.nitrocdn.com/fQnbzylDZXxBRECgMYyQbbqgyDvbiCPj/assets/images/optimized/rev-1f38eeb/wp-content/uploads/2021/01/Soporte-tecnico-1.jpg"
+                    alt="">
+                <label class="py-1 text-xl font-bold tracking-tight text-gray-900 ">Soporte 24/7</label>
+                <p class="text-sm font-medium text-gray-700">Hola</p>
             </div>
-            <div class="flex flex-col w-64 p-2 mx-2 mb-2 bg-white border-2 shadow-lg md:mx-4 h-80 border-slate-200">
-                <img src="images/redes.jpg" alt="">
-                <p>Soporte 24/7</p>
+            <div
+                class="flex flex-col items-center w-64 p-2 mx-2 mb-2 bg-white border-2 rounded-lg shadow-lg md:mx-4 h-80 border-slate-200">
+                <img class="object-cover w-64 h-32 border rounded-lg border-x-slate-300"
+                    src="https://www.sistemasjvr.com/wp-content/uploads/2016/05/soporte-tecnico-efectivo.jpg"
+                    alt="">
+                <label class="py-1 text-xl font-bold tracking-tight text-gray-900 ">Soporte 24/7</label>
+                <p class="text-sm font-medium text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ipsa accusamus incidunt, nemo molestias voluptatibus esse magni quibusdam?</p>
             </div>
         </div>
     </div>
