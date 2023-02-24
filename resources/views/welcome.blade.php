@@ -4,39 +4,51 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Red Intertec</title>
+    <title>Red - Intertec</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
-        .navimage{
+        .navimage {
             background-image: url('images/redesportada.jpeg');
         }
     </style>
 </head>
 
 <body>
-    {{-- <figure class="relative w-full transition-all duration-300 cursor-pointer filter ">
-        <img class="w-full brightness-50" src="images/redesportada.jpeg" alt="">
-        <figcaption class="absolute px-4 text-lg text-white bottom-6">
-            <p>Do you want to get notified when a new component is added to Flowbite?</p>
-        </figcaption>
-    </figure>
-    <nav>
-    </nav> --}}
-    <div class="w-full navimage h-96 brightness-50">
-        <div class="backdrop-brightness-0">
-            <ul class="flex px-4 py-2 space-x-3 ">
-                <li class="p-1 bg-white cursor-pointer" >Link 1</li>
-                <li class="p-1 bg-white cursor-pointer" >Link 2</li>
-                <li class="p-1 bg-white cursor-pointer" >Link 3</li>
-                <li class="p-1 bg-white cursor-pointer" >Link 4</li>
+    <div class="relative ">
+        <img class="object-cover object-center w-full h-96 brightness-75" src="images/fondo.jpg" alt="">
+        <div class="absolute top-0 right-0 m-6">
+            <ul class="flex space-x-5">
+                <li
+                    class="p-1 px-2 font-mono text-xl text-white rounded cursor-pointer hover:border-indigo-500 hover:bg-slate-400">
+                    Contacto</li>
+                <li
+                    class="p-1 px-2 font-mono text-xl text-white rounded cursor-pointer hover:border-indigo-500 hover:bg-slate-400">
+                    Información</li>
             </ul>
         </div>
+        <div
+            class="absolute top-0 bottom-0 left-0 right-0 flex justify-center m-auto text-2xl text-white uppercase h-max">
+            Nuestros Servicios</div>
     </div>
-    Brilla Jacaranda
+
+    <div class="relative flex flex-col items-center justify-center -my-20 space-x-20 md:flex-row">
+        <div class="flex flex-col w-64 h-64 p-2 bg-white border-2 shadow border-slate-200">
+            <img src="images/redes.jpg" alt="">
+            <p>Servicio Técnico</p>
+        </div>
+        <div class="flex flex-col w-64 h-64 p-2 bg-white border-2 shadow border-slate-200">
+            <img src="images/redes.jpg" alt="">
+            <p>Administrador de Redes</p>
+        </div> <div class="flex flex-col w-64 h-64 p-2 bg-white border-2 shadow border-slate-200">
+            <img src="images/redes.jpg" alt="">
+            <p>Soporte 24/7</p>
+        </div>
+
+    </div>
 </body>
 
 </html>
