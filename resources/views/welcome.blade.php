@@ -29,9 +29,10 @@
     <div class="w-full navimage h-96 brightness-50">
         <div class="backdrop-brightness-0">
             <ul class="flex px-4 py-2 space-x-3 ">
-                <li class="text-white">Link 1</li>
-                <li class="p-1 bg-white" >Link 2</li>
-                <li>Link 3</li>
+                <li class="p-1 bg-white cursor-pointer" >Link 1</li>
+                <li class="p-1 bg-white cursor-pointer" >Link 2</li>
+                <li class="p-1 bg-white cursor-pointer" >Link 3</li>
+                <li class="p-1 bg-white cursor-pointer" >Link 4</li>
             </ul>
         </div>
     </div>
