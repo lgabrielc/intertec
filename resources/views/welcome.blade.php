@@ -31,24 +31,31 @@
             </ul>
         </div>
         <div
-            class="absolute top-0 bottom-0 left-0 right-0 flex justify-center m-auto text-2xl text-white uppercase h-max">
+            class="absolute top-0 bottom-0 left-0 right-0 flex justify-center m-auto text-2xl font-bold text-white uppercase h-max">
             Nuestros Servicios</div>
     </div>
+    <div class="flex items-center justify-center">
+        <div class="relative grid grid-cols-2 -my-20 md:grid-cols-4 ">
+            <div class="flex flex-col w-64 p-2 mx-2 mb-2 bg-white border-2 shadow-lg md:mx-4 h-80 border-slate-200">
+                <img src="images/redes.jpg" alt="">
+                <p>Servicio Técnico</p>
+            </div>
+            <div class="flex flex-col w-64 p-2 mx-2 mb-2 bg-white border-2 shadow-lg md:mx-4 h-80 border-slate-200">
+                <img src="images/redes.jpg" alt="">
+                <p>Administración de Redes</p>
+            </div>
 
-    <div class="relative flex flex-col items-center justify-center -my-20 space-x-20 md:flex-row">
-        <div class="flex flex-col w-64 h-64 p-2 bg-white border-2 shadow border-slate-200">
-            <img src="images/redes.jpg" alt="">
-            <p>Servicio Técnico</p>
+            <div class="flex flex-col w-64 p-2 mx-2 mb-2 bg-white border-2 shadow-lg md:mx-4 h-80 border-slate-200">
+                <img src="images/redes.jpg" alt="">
+                <p>Soporte 24/7</p>
+            </div>
+            <div class="flex flex-col w-64 p-2 mx-2 mb-2 bg-white border-2 shadow-lg md:mx-4 h-80 border-slate-200">
+                <img src="images/redes.jpg" alt="">
+                <p>Soporte 24/7</p>
+            </div>
         </div>
-        <div class="flex flex-col w-64 h-64 p-2 bg-white border-2 shadow border-slate-200">
-            <img src="images/redes.jpg" alt="">
-            <p>Administrador de Redes</p>
-        </div> <div class="flex flex-col w-64 h-64 p-2 bg-white border-2 shadow border-slate-200">
-            <img src="images/redes.jpg" alt="">
-            <p>Soporte 24/7</p>
-        </div>
-
     </div>
+
 </body>
 
 </html>
