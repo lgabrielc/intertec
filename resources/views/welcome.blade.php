@@ -40,16 +40,17 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
                 <div
                     class="flex flex-col items-center w-64 p-2 mx-2 mb-2 bg-white border-2 rounded-lg shadow-lg md:mx-4 h-80 border-slate-200">
-                    <img class="object-cover w-64 h-32 border rounded-lg border-x-slate-300" src="images/redes.jpg"
+                    <img class="object-cover w-64 h-32 border rounded-lg border-x-slate-300"
+                        src="https://verloop.io/wp-content/uploads/Benefits-of-Using-WhatsApp-Business-Account-1-1536x768.jpg"
                         alt="">
-                    <label class="py-1 text-xl font-bold tracking-tight ">Servicio Técnico</label>
-                    <p class="text-sm font-medium text-gray-700">Ofrecemos reparaciones, mantenimiento y optimización de
-                        computadoras y dispositivos móviles para mejorar el rendimiento y solucionar problemas.</p>
+                    <label class="py-1 text-xl font-bold tracking-tight ">Automatiza tus alertas</label>
+                    <p class="text-sm font-medium text-gray-700">Este servicio permite enviar mensajes automatizados y
+                        personalizados a través de WhatsApp a tus clientes o usuarios en momentos específicos</p>
                 </div>
                 <div
                     class="flex flex-col items-center w-64 p-2 mx-2 mb-2 bg-white border-2 rounded-lg shadow-lg md:mx-4 h-80 border-slate-200">
-                    <img class="object-cover w-64 h-32 border rounded-lg border-x-slate-300"
-                        src="https://fp.liceolapaz.com/wp-content/uploads/2020/05/CS.Informatica3.1.jpg" alt="">
+                    <img class="object-cover w-64 h-32 border rounded-lg border-x-slate-300" src="images/redes.jpg"
+                        alt="">
                     <label class="py-1 text-xl font-bold tracking-tight text-gray-900 ">Administración de Redes</label>
                     <p class="text-sm font-medium text-gray-700">Proporcionamos servicios de configuración,
                         mantenimiento y
@@ -79,6 +80,17 @@
                         personalizados para mejorar la eficiencia y productividad de nuestros clientes mediante
                         soluciones
                         seguras y fáciles de usar.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col justify-center items-center -top-10 relative mb-32">
+            <label class="text-center text-2xl mb-7" for="">Automatiza tu negocio</label>
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="h-96 bg-white w-96 mx-3 border-2 border-slate-400 rounded-md">
+                    <img src="" alt="">
+                </div>
+                <div class="h-96 bg-white w-96 mx-3 border-2 border-slate-400 rounded-md">
+                    <img src="" alt="">
                 </div>
             </div>
         </div>
