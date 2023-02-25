@@ -4,14 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Red - Intertec</title>
+    <title>RED INTERTEC</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicons/favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicons/site.webmanifest') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="bg-gray-100">
     <nav>
         <div class="relative ">
             <img class="object-cover object-center w-full h-96 brightness-75" src="images/fondo.jpg" alt="">
@@ -79,7 +83,7 @@
             </div>
         </div>
     </section>
-    <footer class="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100">
+    <footer class="bg-gradient-to-r from-gray-300 via-[#6aabe0] to-gray-100">
         <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
                 <div>
@@ -177,7 +181,7 @@
                 </div>
             </div>
             <p class="mt-8 text-xs text-gray-800">
-                © 2022 Comany Name
+                © 2023 RED INTERTEC
             </p>
         </div>
     </footer>
