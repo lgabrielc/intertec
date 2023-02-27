@@ -18,7 +18,7 @@
 <body class="bg-gray-100">
     <nav>
         <div class="relative ">
-            <img class="object-cover object-center w-full h-96 brightness-75" src="images/fondo.jpg" alt="">
+            <img class="object-cover object-center w-full h-96 brightness-75" src="images/fondo.jpeg" alt="">
             <div class="absolute top-0 right-0 m-6">
                 <ul class="flex space-x-5">
                     <li
@@ -33,7 +33,7 @@
                 class="absolute top-0 bottom-0 left-0 right-0 flex justify-center m-auto text-2xl font-bold text-white uppercase h-max">
                 Nuestros Servicios</div>
         </div>
-        <img class="h-24 sm:h-36 absolute top-0 md:h-48 m-4 rounded-full" src="images/logo.jpg" alt="">
+        <img class="h-24 sm:h-36 absolute top-0 md:h-48 m-4 rounded-full" src="images/logo.jpeg" alt="">
     </nav>
     <section>
         <div class="relative flex items-center justify-center -top-20">
@@ -41,7 +41,7 @@
                 <div
                     class="flex flex-col items-center w-64 p-2 mx-2 mb-2 bg-white border-2 rounded-lg shadow-lg md:mx-4 h-80 border-slate-200">
                     <img class="object-cover w-64 h-32 border rounded-lg border-x-slate-300"
-                        src="https://verloop.io/wp-content/uploads/Benefits-of-Using-WhatsApp-Business-Account-1-1536x768.jpg"
+                        src="images/servicios/1c.jpeg"
                         alt="">
                     <label class="py-1 text-xl font-bold tracking-tight ">Automatiza tus alertas</label>
                     <p class="text-sm font-medium text-gray-700">Este servicio permite enviar mensajes automatizados y
@@ -49,7 +49,7 @@
                 </div>
                 <div
                     class="flex flex-col items-center w-64 p-2 mx-2 mb-2 bg-white border-2 rounded-lg shadow-lg md:mx-4 h-80 border-slate-200">
-                    <img class="object-cover w-64 h-32 border rounded-lg border-x-slate-300" src="images/redes.jpg"
+                    <img class="object-cover w-64 h-32 border rounded-lg border-x-slate-300" src="images/servicios/2c.jpeg"
                         alt="">
                     <label class="py-1 text-xl font-bold tracking-tight text-gray-900 ">Administración de Redes</label>
                     <p class="text-sm font-medium text-gray-700">Proporcionamos servicios de configuración,
@@ -62,7 +62,7 @@
                 <div
                     class="flex flex-col items-center w-64 p-2 mx-2 mb-2 bg-white border-2 rounded-lg shadow-lg md:mx-4 h-80 border-slate-200">
                     <img class="object-cover w-64 h-32 border rounded-lg border-x-slate-300"
-                        src="https://cdn-fljjp.nitrocdn.com/fQnbzylDZXxBRECgMYyQbbqgyDvbiCPj/assets/images/optimized/rev-1f38eeb/wp-content/uploads/2021/01/Soporte-tecnico-1.jpg"
+                        src="images/servicios/3c.jpeg"
                         alt="">
                     <label class="py-1 text-xl font-bold tracking-tight text-gray-900 ">Software para ISP</label>
                     <p class="text-sm font-medium text-gray-700">Este software ayuda a los proveedores de servicios de
@@ -73,7 +73,7 @@
                 <div
                     class="flex flex-col items-center w-64 p-2 mx-2 mb-2 bg-white border-2 rounded-lg shadow-lg md:mx-4 h-80 border-slate-200">
                     <img class="object-cover w-64 h-32 border rounded-lg border-x-slate-300"
-                        src="https://www.sistemasjvr.com/wp-content/uploads/2016/05/soporte-tecnico-efectivo.jpg"
+                        src="images/servicios/4c.jpeg"
                         alt="">
                     <label class="py-1 text-xl font-bold tracking-tight text-gray-900 ">Desarrollo de Software</label>
                     <p class="text-sm font-medium text-gray-700">Ofrecemos servicios de Desarrollo de Software
