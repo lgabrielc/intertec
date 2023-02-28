@@ -13,7 +13,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicons/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicons/site.webmanifest') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
+
 <body class="bg-gray-100">
     <nav>
         <div class="relative ">
@@ -92,34 +94,48 @@
                 </path>
             </svg>
         </div> --}}
-
-        <div
-            class="relative flex flex-col items-center justify-center pt-8 mb-2 text-white bg-sky-900 b-2">
-            <label class="text-2xl text-center mb-7" for="">Automatiza tu negocio</label>
-            <div class="container grid grid-cols-1 lg:grid-cols-2">
-                <div class="w-full p-4 mx-3 rounded-md h-96">
-                    <label for="">Administra tu ISP</label>
-                    <ul class="px-4 list-disc">
-                        <li>Cortes Automaticos de Servicio</li>
-                        <li>Envío de alertas automaticas para tus clientes</li>
-                    </ul>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus distinctio quaerat
-                        reprehenderit voluptatum, blanditiis neque dignissimos esse. Iste neque dolorem a? Aperiam,
-                        ducimus accusantium omnis tenetur unde dolor doloribus eos.</p>
-                </div>
-                <div class="mx-3 bg-white border-2 rounded-md h-96 w-96 border-slate-400">
-                    <img src="" alt="">
+        <div class="space-y-8 bg-gradient-to-r from-slate-800 to-gray-200">
+            <div class="container p-8 mx-auto text-white rounded-2xl bg-sky-900">
+                <div class="text-2xl font-bold text-center uppercase mb-7">Automatiza tus procesos</div>
+                <div class="flex flex-col justify-center lg:flex-row ">
+                    <div class="w-full px-4 lg:w-1/2 sm:px-8 md:px-12 lg:px-24 xl:px-36 ">
+                        <label class="font-bold uppercase">Administra tu ISP</label>
+                        <ul class="mt-4 list-disc">
+                            <li>Gestión de clientes: El software de administración de ISP permite a los proveedores de
+                                servicios de Internet administrar de manera eficiente las cuentas de los clientes,
+                                incluyendo la creación y eliminación de cuentas, la gestión de contraseñas y la
+                                facturación.
+                            </li><br>
+                            <li>Los administradores de servicio ISP también pueden administrar los recursos de la red,
+                                incluyendo el ancho de banda, el espacio de almacenamiento y el tráfico de datos, para
+                                asegurar que se estén utilizando de manera efectiva y eficiente.
+                            </li><br>
+                            <li>Soporte técnico: Los administradores de servicio ISP también pueden proporcionar soporte
+                                técnico a los clientes, lo que mejora la satisfacción del cliente y reduce la carga de
+                                trabajo en los departamentos de soporte técnico.
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-between w-full mt-8 space-x-0 lg:space-x-20 lg:justify-start lg:w-1/2 lg:flex-row">
+                        <div class="flex flex-col ">
+                            <i class="fa-solid fa-comments fa-10x"></i>
+                            <label class="pt-4 text-center">Envio de alertas automaticos</label>
+                        </div>
+                        <div class="flex flex-col ">
+                            <i class="px-0 fa-solid fa-robot fa-10x lg:px-2 xl:px-4 2xl:px-16"></i>
+                            <label class="pt-4 text-center">Cortes de servicio automáticos</label>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
-        <i class="fa fa-copy"></i>
-        <i class="fa fa-save"></i>
-        <i class="fa fa-trash"></i>
-        <i class="fa fa-home"></i>
-        A
     </div>
+    <button>
+    </button>
     <footer
-        class="static bottom-0 w-full p-4 bg-white border shadow md:flex md:items-center md:justify-between md:p-6 bg-gradient-to-r from-sky-800 via-sky-600 to-slate-600">
+        class="static bottom-0 w-full md:flex md:items-center md:justify-between md:p-6 bg-gradient-to-r from-sky-800 via-sky-600 to-slate-600">
         <span class="text-sm text-white sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/"
                 class="hover:underline">RED INTERTEC</a>. Todos los derechos reservados.
         </span>
@@ -133,11 +149,5 @@
         </ul>
     </footer>
 </body>
-<script>
-    const path = document.getElementById('my-path');
-    const bbox = path.getBBox();
-    const viewBox = `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`;
-    path.setAttribute('viewBox', viewBox);
-</script>
 
 </html>
