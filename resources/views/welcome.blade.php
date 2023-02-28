@@ -34,7 +34,7 @@
                 class="absolute top-0 bottom-0 left-0 right-0 flex justify-center m-auto text-2xl font-bold text-white uppercase h-max">
                 Nuestros Servicios</div>
         </div>
-        <img class="absolute top-0 h-24 m-4 rounded-full sm:h-36 md:h-48" src="images/logo.jpeg" alt="">
+        <img class="absolute top-0 h-20 m-4 rounded-full sm:h-36 md:h-48" src="images/logo.jpeg" alt="">
     </nav>
     <div>
         <div class="relative flex items-center justify-center -top-20">
@@ -84,13 +84,13 @@
     </div>
 
 
-    <div class="space-y-8 bg-gradient-to-r from-gray-800 to-gray-200">
-        <div class="relative space-y-8 bg-gradient-to-r from-slate-800 to-gray-200 -top-10">
+    <div class="space-y-8 bg-gradient-to-r from-gray-800 to-gray-200 mb-8">
+        <div class="relative space-y-8 bg-gradient-to-r from-slate-800 to-gray-200 -top-10 pt-16">
             <div class="container p-8 mx-auto text-white rounded-2xl bg-sky-900">
                 <div class="text-2xl font-bold text-center uppercase mb-7">Automatiza tus procesos</div>
                 <div class="flex flex-col justify-center lg:flex-row ">
                     <div class="w-full px-4 lg:w-1/2 sm:px-8 md:px-12 lg:px-24 xl:px-36 ">
-                        <label class="font-bold uppercase">Digitaliza tu empresa</label>
+                        <label class="font-bold uppercase">Administra tu ISP</label>
                         <ul class="mt-4 list-disc">
                             <li>Gestión de clientes: El software de administración de ISP permite a los proveedores de
                                 servicios de Internet administrar de manera eficiente las cuentas de los clientes,
@@ -122,12 +122,12 @@
             </div>
 
         </div>
-        <div class="relative space-y-8 bg-gradient-to-r from-slate-800 to-gray-200 -top-10">
+        <div class="relative space-y-8 bg-gradient-to-r from-slate-800 to-gray-200 pb-16">
             <div class="container p-8 mx-auto text-white rounded-2xl bg-sky-900">
                 <div class="text-2xl font-bold text-center uppercase mb-7">Desarrollo de Software a medida</div>
                 <div class="flex flex-col justify-center lg:flex-row ">
                     <div class="w-full px-4 lg:w-1/2 sm:px-8 md:px-12 lg:px-24 xl:px-36 ">
-                        <label class="font-bold uppercase">Administra tu ISP</label>
+                        <label class="font-bold uppercase">Digitaliza tu empresa</label>
                         <ul class="mt-4 list-disc">
                             <li>Personalización: Un software a medida se adapta completamente a las necesidades
                                 específicas
@@ -168,8 +168,8 @@
                     <div
                         class="flex flex-col items-center justify-between w-full mt-8 space-x-0 lg:space-x-20 lg:justify-start lg:w-1/2 lg:flex-row">
                         <div class="flex flex-col ">
-                            <i class="fa-solid fa-comments fa-10x"></i>
-                            <label class="pt-4 text-center">Envio de alertas automaticos</label>
+                            <i class="fa-solid fa-cloud-arrow-up fa-10x"></i>
+                            <label class="pt-4 text-center">Sistema en la nube</label>
                         </div>
                         <div class="flex flex-col ">
                             <i class="px-0 fa-solid fa-robot fa-10x lg:px-2 xl:px-4 2xl:px-16"></i>
