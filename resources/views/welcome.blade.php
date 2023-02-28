@@ -90,7 +90,7 @@
                 <div class="text-2xl font-bold text-center uppercase mb-7">Automatiza tus procesos</div>
                 <div class="flex flex-col justify-center lg:flex-row ">
                     <div class="w-full px-4 lg:w-1/2 sm:px-8 md:px-12 lg:px-24 xl:px-36 ">
-                        <label class="font-bold uppercase">Administra tu ISP</label>
+                        <label class="font-bold uppercase">Digitaliza tu empresa</label>
                         <ul class="mt-4 list-disc">
                             <li>Gestión de clientes: El software de administración de ISP permite a los proveedores de
                                 servicios de Internet administrar de manera eficiente las cuentas de los clientes,
