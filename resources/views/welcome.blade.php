@@ -82,19 +82,10 @@
             </div>
         </div>
     </div>
-    <div>
-        {{-- <div style="height: 150px; overflow: hidden;" class="relative -top-20">
-            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-                <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:rgb(255, 255, 255);stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:rgb(30, 58, 138);stop-opacity:1" />
-                </linearGradient>
-                <path d="M-1.69,-4.42 C247.17,150.50 247.74,151.48 500.56,5.45 L500.00,150.00 L0.00,150.00 Z"
-                fill="url(#grad1)">
-                </path>
-            </svg>
-        </div> --}}
-        <div class="space-y-8 bg-gradient-to-r from-slate-800 to-gray-200">
+
+
+    <div class="space-y-8 bg-gradient-to-r from-gray-800 to-gray-200">
+        <div class="relative space-y-8 bg-gradient-to-r from-slate-800 to-gray-200 -top-10">
             <div class="container p-8 mx-auto text-white rounded-2xl bg-sky-900">
                 <div class="text-2xl font-bold text-center uppercase mb-7">Automatiza tus procesos</div>
                 <div class="flex flex-col justify-center lg:flex-row ">
@@ -131,11 +122,66 @@
             </div>
 
         </div>
+        <div class="relative space-y-8 bg-gradient-to-r from-slate-800 to-gray-200 -top-10">
+            <div class="container p-8 mx-auto text-white rounded-2xl bg-sky-900">
+                <div class="text-2xl font-bold text-center uppercase mb-7">Desarrollo de Software a medida</div>
+                <div class="flex flex-col justify-center lg:flex-row ">
+                    <div class="w-full px-4 lg:w-1/2 sm:px-8 md:px-12 lg:px-24 xl:px-36 ">
+                        <label class="font-bold uppercase">Administra tu ISP</label>
+                        <ul class="mt-4 list-disc">
+                            <li>Personalización: Un software a medida se adapta completamente a las necesidades
+                                específicas
+                                de una empresa o usuario, lo que permite obtener una solución personalizada que cubre
+                                todas
+                                las necesidades y requerimientos específicos de cada caso.
+                            </li><br>
+                            <li>Eficiencia: Un software a medida se desarrolla con funcionalidades específicas y solo
+                                con lo
+                                que se necesita, lo que significa que el sistema puede ser más rápido, ágil y eficiente
+                                en
+                                comparación con los sistemas estándar.
+                            </li><br>
+                            <li>Escalabilidad: El software a medida puede diseñarse para permitir el crecimiento de una
+                                empresa, añadiendo nuevas funcionalidades a medida que se necesitan.
+                            </li><br>
+                            <li>Control: Al desarrollar un software a medida, el usuario o empresa tiene un mayor
+                                control
+                                sobre el proceso de desarrollo, el resultado final y la propiedad intelectual.
+                            </li><br>
+                            <li>Integración: El software a medida se puede diseñar para integrarse perfectamente con
+                                otros
+                                sistemas y software ya existentes en la empresa, lo que permite una mayor eficiencia y
+                                productividad.
+                            </li><br>
+                            <li>Soporte: Al desarrollar un software a medida, se puede contar con el soporte y
+                                mantenimiento
+                                constante de un equipo de expertos para garantizar el correcto funcionamiento del
+                                sistema.
+                            </li><br>
+                            <li>Rentabilidad: Aunque el desarrollo de un software a medida puede parecer costoso
+                                inicialmente, a largo plazo puede resultar en un ahorro de tiempo y dinero al eliminar
+                                la
+                                necesidad de sistemas adicionales o costosas personalizaciones en el futuro.
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-between w-full mt-8 space-x-0 lg:space-x-20 lg:justify-start lg:w-1/2 lg:flex-row">
+                        <div class="flex flex-col ">
+                            <i class="fa-solid fa-comments fa-10x"></i>
+                            <label class="pt-4 text-center">Envio de alertas automaticos</label>
+                        </div>
+                        <div class="flex flex-col ">
+                            <i class="px-0 fa-solid fa-robot fa-10x lg:px-2 xl:px-4 2xl:px-16"></i>
+                            <label class="pt-4 text-center">Cortes de servicio automáticos</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <button>
-    </button>
     <footer
-        class="static bottom-0 w-full md:flex md:items-center md:justify-between md:p-6 bg-gradient-to-r from-sky-800 via-sky-600 to-slate-600">
+        class="static bottom-0 w-full p-2 md:flex md:items-center md:justify-between md:p-6 bg-gradient-to-r from-sky-800 via-sky-600 to-slate-600">
         <span class="text-sm text-white sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/"
                 class="hover:underline">RED INTERTEC</a>. Todos los derechos reservados.
         </span>
