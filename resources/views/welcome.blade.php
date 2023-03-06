@@ -20,8 +20,8 @@
 
     @include('nav')
 
-    <div class="space-y-8 bg-gradient-to-r from-gray-800 to-gray-200 mb-8">
-        <div class="relative space-y-8 bg-gradient-to-r from-slate-800 to-gray-200 -top-10 pt-16">
+    <div class="mb-8 space-y-8 bg-gradient-to-r from-gray-800 to-gray-200">
+        <div class="relative pt-16 space-y-8 bg-gradient-to-r from-slate-800 to-gray-200 -top-10">
             <div class="container p-8 mx-auto text-white rounded-2xl bg-sky-900">
                 <div class="text-2xl font-bold text-center uppercase mb-7">Automatiza tus procesos</div>
                 <div class="flex flex-col justify-center lg:flex-row ">
@@ -58,7 +58,7 @@
             </div>
 
         </div>
-        <div class="relative space-y-8 bg-gradient-to-r from-slate-800 to-gray-200 pb-16">
+        <div class="relative pb-16 space-y-8 bg-gradient-to-r from-slate-800 to-gray-200">
             <div class="container p-8 mx-auto text-white rounded-2xl bg-sky-900">
                 <div class="text-2xl font-bold text-center uppercase mb-7">Desarrollo de Software a medida</div>
                 <div class="flex flex-col justify-center lg:flex-row ">
