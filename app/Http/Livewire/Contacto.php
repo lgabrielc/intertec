@@ -2,23 +2,22 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Requests\ContactRequest;
+use App\Models\Contact;
 use Livewire\Component;
 
 class Contacto extends Component
 {
     public $name, $email, $phone, $message;
 
-    public function button_contact()
+    public function submitContactForm(ContactRequest $request)
     {
-        $this->validate([
-            'name' => 'required|min:4',
-            'email' => 'required|email',
-            'phone' => 'numeric|min:9|max:12',
-            'message' => 'required|min:2|max:40'
-        ]);
-        dd($this->name);
+        $validatedData = $request->validate();
+        // $this->dispatchBrowserEvent('banner-message', [
+        //     'style' => 'success',
+        //     'message' => 'Su solicitud fue enviada con éxito!'
+        // ]);
     }
-
     public function render()
     {
         return view('livewire.contacto');
