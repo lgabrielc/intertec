@@ -12,8 +12,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicons/favicon-16x16.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicons/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicons/site.webmanifest') }}">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
 
@@ -21,17 +21,18 @@
     <div class="flex flex-no-wrap">
         <!-- Sidebar starts -->
         <div style="min-height: 700px" class="absolute hidden w-64 h-screen bg-gray-100 shadow lg:relative lg:block">
-            <div class="flex items-center w-full h-16 px-8 mt-8 ">
+            <div class="flex items-center w-full h-16 px-6 mt-6 ">
                 <img class=" rounded-2xl" src="{{ asset('images/red intertec.png') }}" alt="Red Intertec">
             </div>
             <ul class="py-6">
-                <li
-                    class="{{ Request::is('admin/dashboard') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                    <div class="flex items-center">
+                @can('admin.dashboard')
+                <a href="{{ route('admin.dashboard') }}"
+                    class="{{ Request::is('admin/dashboard') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 block pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                    <li class="flex items-center">
                         <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid"
-                                width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid" width="20"
+                                height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />
                                 <rect x="4" y="4" width="6" height="6" rx="1" />
                                 <rect x="14" y="4" width="6" height="6" rx="1" />
@@ -39,43 +40,54 @@
                                 <rect x="14" y="14" width="6" height="6" rx="1" />
                             </svg>
                         </div>
-                        <a href="{{ route('admin.dashboard') }}" class="ml-2">Dashboard</a>
-                    </div>
-                </li>
-                <li
-                    class="{{ Request::is('admin/usuarios') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle"
-                            width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" />
-                            <path
-                                d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1" />
-                        </svg>
-                        <a href="{{ route('admin.users') }}" class="ml-2">Usuarios</a>
-                    </div>
-                </li>
-                @can('admin.resources')
-                    <li
-                        class="{{ Request::is('admin/recursos') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-compass"
-                                width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" />
-                                <polyline points="8 16 10 10 16 8 14 14 8 16" />
-                                <circle cx="12" cy="12" r="9" />
-                            </svg>
-                            <a href="{{ route('admin.resources') }}" class="ml-2">Recursos</a>
-                        </div>
+                        <span class="ml-2">Dashboard</span>
                     </li>
+                </a>
+                @endcan
+                @can('admin.users')
+                <a href="{{ route('admin.users') }}"
+                    class="{{ Request::is('admin/usuarios') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 block pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                    <li class="flex items-center">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid" width="20"
+                                height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <rect x="4" y="4" width="6" height="6" rx="1" />
+                                <rect x="14" y="4" width="6" height="6" rx="1" />
+                                <rect x="4" y="14" width="6" height="6" rx="1" />
+                                <rect x="14" y="14" width="6" height="6" rx="1" />
+                            </svg>
+                        </div>
+                        <span class="ml-2">Usuarios</span>
+                    </li>
+                </a>
+                @endcan
+                @can('admin.resources')
+                <a href="{{ route('admin.resources') }}"
+                    class="{{ Request::is('admin/recursos') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 block pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                    <li class="flex items-center">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid" width="20"
+                                height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <rect x="4" y="4" width="6" height="6" rx="1" />
+                                <rect x="14" y="4" width="6" height="6" rx="1" />
+                                <rect x="4" y="14" width="6" height="6" rx="1" />
+                                <rect x="14" y="14" width="6" height="6" rx="1" />
+                            </svg>
+                        </div>
+                        <span class="ml-2">Recursos</span>
+                    </li>
+                </a>
                 @endcan
                 {{-- <li
                     class="{{ Request::is('admin/usuarios') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
                     <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-code"
-                            width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-code" width="20"
+                            height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" />
                             <polyline points="7 8 3 12 7 16" />
                             <polyline points="17 8 21 12 17 16" />
@@ -113,17 +125,13 @@
                                     <div class="w-6 h-6 md:w-8 md:h-8">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-grid" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round">
+                                            stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                                            stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" />
-                                            <rect x="4" y="4" width="6" height="6"
-                                                rx="1" />
-                                            <rect x="14" y="4" width="6" height="6"
-                                                rx="1" />
-                                            <rect x="4" y="14" width="6" height="6"
-                                                rx="1" />
-                                            <rect x="14" y="14" width="6" height="6"
-                                                rx="1" />
+                                            <rect x="4" y="4" width="6" height="6" rx="1" />
+                                            <rect x="14" y="4" width="6" height="6" rx="1" />
+                                            <rect x="4" y="14" width="6" height="6" rx="1" />
+                                            <rect x="14" y="14" width="6" height="6" rx="1" />
                                         </svg>
                                     </div>
                                     <a href="javascript:void(0)"
@@ -136,8 +144,8 @@
                                     <div class="w-6 h-6 md:w-8 md:h-8">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-puzzle" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round">
+                                            stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                                            stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" />
                                             <path
                                                 d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1" />
@@ -153,8 +161,8 @@
                                     <div class="w-6 h-6 md:w-8 md:h-8">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-compass" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round">
+                                            stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                                            stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" />
                                             <polyline points="8 16 10 10 16 8 14 14 8 16" />
                                             <circle cx="12" cy="12" r="9" />
@@ -170,8 +178,8 @@
                                     <div class="w-6 h-6 md:w-8 md:h-8">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-code" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round">
+                                            stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                                            stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" />
                                             <polyline points="7 8 3 12 7 16" />
                                             <polyline points="17 8 21 12 17 16" />
@@ -272,10 +280,9 @@
                                             class="flex items-center justify-between w-full text-gray-600 cursor-pointer hover:text-indigo-700">
                                             <div class="flex items-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-user" width="18"
-                                                    height="18" viewBox="0 0 24 24" stroke-width="1.5"
-                                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
+                                                    class="icon icon-tabler icon-tabler-user" width="18" height="18"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                     <path stroke="none" d="M0 0h24v24H0z" />
                                                     <circle cx="12" cy="7" r="4" />
                                                     <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
@@ -287,10 +294,9 @@
                                             class="flex items-center justify-between w-full mt-2 text-gray-600 cursor-pointer hover:text-indigo-700">
                                             <div class="flex items-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-logout" width="20"
-                                                    height="20" viewBox="0 0 24 24" stroke-width="1.5"
-                                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
+                                                    class="icon icon-tabler icon-tabler-logout" width="20" height="20"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                     <path stroke="none" d="M0 0h24v24H0z" />
                                                     <path
                                                         d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
@@ -330,9 +336,11 @@
             <!-- Remove class [ h-64 ] when adding a card block -->
             <div class="container w-11/12 h-64 px-6 py-10 mx-auto ">
                 <!-- Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border -->
-                <div class="w-full h-full border-2 border-gray-300 border-dashed rounded">
+                <div class="w-full h-full rounded">
                     <!-- Place your content here -->
-                    @yield('content')
+                    <main>
+                        {{$slot}}
+                    </main>
                 </div>
             </div>
         </div>

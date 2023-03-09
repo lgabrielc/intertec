@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Admin\Dashboard\Dashboard as Dashboard;
+use App\Http\Livewire\Admin\User\Users;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +17,6 @@ use App\Http\Livewire\Admin\Dashboard\Dashboard as Dashboard;
 
 Route::get('/dashboard', Dashboard::class)->middleware('can:admin.dashboard')->name('admin.dashboard');
 
-Route::get('/usuarios', Dashboard::class)->middleware('can:admin.users')->name('admin.users');
+Route::get('/usuarios', Users::class)->middleware('can:admin.users')->name('admin.users');
 
 Route::get('/recursos', Dashboard::class)->middleware('can:admin.resources')->name('admin.resources');

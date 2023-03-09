@@ -2,15 +2,17 @@
     <div class="relative">
         <img class="object-cover object-center w-full h-96 brightness-75" src="images/fondo.jpeg" alt="red intertec">
         <div class="absolute top-0 right-0 m-6">
-            <ul class="flex space-x-5">
-                <li
-                    class="p-1 px-2 font-mono text-xl text-white rounded cursor-pointer hover:border-indigo-500 hover:bg-slate-400">
-                    <a href="/contacto">Contacto</a>
-                </li>
-                <li
-                    class="p-1 px-2 font-mono text-xl text-white rounded cursor-pointer hover:border-indigo-500 hover:bg-slate-400">
-                    Información</li>
-            </ul>
+            <div class="flex space-x-5">
+                <div>
+                    <a class="p-1 px-2 font-mono text-xl text-white rounded cursor-pointer hover:border-indigo-500 hover:bg-slate-400"
+                        href="/contacto">Contacto</a>
+                </div>
+                <div>
+                    <a class="p-1 px-2 font-mono text-xl text-white rounded cursor-pointer hover:border-indigo-500 hover:bg-slate-400"
+                        href="/contacto">Información</a>
+
+                </div>
+            </div>
         </div>
         <div
             class="absolute top-0 bottom-0 left-0 right-0 flex justify-center m-auto text-2xl font-bold text-white uppercase h-max">
