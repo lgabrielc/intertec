@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use Livewire\Component;
 
