@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title')</title>
+    <title>Intertec</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
@@ -26,7 +26,7 @@
             </div>
             <ul class="py-6">
                 <li
-                    class="{{ Request::is('admin/dashboard') ? 'bg-black' : '' }} pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-indigo-700 cursor-pointer focus:text-indigo-700 focus:outline-none">
+                    class="{{ Request::is('admin/dashboard') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
                     <div class="flex items-center">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid"
@@ -39,11 +39,11 @@
                                 <rect x="14" y="14" width="6" height="6" rx="1" />
                             </svg>
                         </div>
-                        <a href="javascript:void(0)" class="ml-2">Dashboard</a>
+                        <a href="{{ route('admin.dashboard') }}" class="ml-2">Dashboard</a>
                     </div>
                 </li>
                 <li
-                    class="{{ Request::is('admin/ae') ? 'bg-black' : '' }} py-2 pl-6 mt-4 mb-4 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                    class="{{ Request::is('admin/usuarios') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
                     <div class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle"
                             width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -52,24 +52,26 @@
                             <path
                                 d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1" />
                         </svg>
-                        <a href="javascript:void(0)" class="ml-2">Products</a>
+                        <a href="{{ route('admin.users') }}" class="ml-2">Usuarios</a>
                     </div>
                 </li>
-                <li
-                    class="py-2 pl-6 mb-4 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-compass"
-                            width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" />
-                            <polyline points="8 16 10 10 16 8 14 14 8 16" />
-                            <circle cx="12" cy="12" r="9" />
-                        </svg>
-                        <a href="javascript:void(0)" class="ml-2">Performance</a>
-                    </div>
-                </li>
-                <li
-                    class="py-2 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                @can('admin.resources')
+                    <li
+                        class="{{ Request::is('admin/recursos') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-compass"
+                                width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <polyline points="8 16 10 10 16 8 14 14 8 16" />
+                                <circle cx="12" cy="12" r="9" />
+                            </svg>
+                            <a href="{{ route('admin.resources') }}" class="ml-2">Recursos</a>
+                        </div>
+                    </li>
+                @endcan
+                {{-- <li
+                    class="{{ Request::is('admin/usuarios') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
                     <div class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-code"
                             width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
@@ -81,7 +83,7 @@
                         </svg>
                         <a href="javascript:void(0)" class="ml-2">Deliverables</a>
                     </div>
-                </li>
+                </li> --}}
             </ul>
         </div>
         <!--Mobile responsive sidebar-->
@@ -106,7 +108,7 @@
                         </div>
                         <ul class="py-6">
                             <li
-                                class="pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-white text-indigo-700 cursor-pointer focus:text-indigo-700 focus:outline-none">
+                                class="pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-indigo-700 cursor-pointer focus:text-indigo-700 focus:outline-none">
                                 <div class="flex items-center">
                                     <div class="w-6 h-6 md:w-8 md:h-8">
                                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -200,7 +202,8 @@
                                     <img alt="profile-pic" role="img"
                                         src="https://tuk-cdn.s3.amazonaws.com/assets/components/boxed_layout/bl_1.png"
                                         class="w-8 h-8 rounded-md" />
-                                    <p class="ml-2 text-base leading-4 text-gray-800 md:text-xl">Jane Doe</p>
+                                    <p class="ml-2 text-base leading-4 text-gray-800 md:text-xl">
+                                        {{ auth()->user()->name }}</p>
                                 </div>
                                 <ul class="flex">
                                     <li class="pt-5 pb-3 text-white cursor-pointer">
@@ -306,7 +309,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="mx-3 text-sm text-gray-800">Jane Doe</p>
+                                <p class="mx-3 text-sm text-gray-800">{{ auth()->user()->name }}</p>
                                 <button aria-label="open profile options"
                                     class="text-gray-600 cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-600">
                                     <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light_with_header_and_icons-svg6.svg"

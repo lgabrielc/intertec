@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::create([
+        $userAdmin = User::create([
             'name' => 'Luis Gabriel',
             // 'apellido' => 'Calloapaza Vilca',
             'email' => 'kidmeg100@hotmail.com',
@@ -24,6 +24,17 @@ class UserSeeder extends Seeder
             // 'estado_id' => '1',
             'password' => bcrypt('74712308'),
         ]);
-        $user->assignRole('Administrador');
+        $userTecnico = User::create([
+            'name' => 'Luis Gabriel',
+            // 'apellido' => 'Calloapaza Vilca',
+            'email' => 'kidmeg200@hotmail.com',
+            // 'dni' => '40135285',
+            // 'direccion' => 'Oasis de Villa el Salvador',
+            // 'telefono' => '990039886',
+            // 'estado_id' => '1',
+            'password' => bcrypt('74712308'),
+        ]);
+        $userAdmin->assignRole('Administrador');
+        $userTecnico->assignRole('Tecnico');
     }
 }

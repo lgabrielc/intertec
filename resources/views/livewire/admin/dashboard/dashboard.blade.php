@@ -1,5 +1,5 @@
 <div>
-    {{-- <div class="bg-white rounded shadow dark:bg-gray-800">
+    <div class="bg-white rounded shadow dark:bg-gray-800">
         <div class="flex flex-col items-start justify-between w-full p-4 lg:flex-row lg:p-8 lg:items-stretch">
             <div class="flex flex-col items-start w-full lg:w-1/3 lg:flex-row lg:items-center">
                 <div class="flex items-center">
@@ -556,6 +556,5 @@
                 </tbody>
             </table>
         </div>
-    </div> --}}
-    a
+    </div>
 </div>

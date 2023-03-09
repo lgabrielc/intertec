@@ -10,15 +10,11 @@ class PermissionSeeder extends Seeder
 {
     public function run()
     {
+        $roleAdmin = Role::create(['name' => 'Administrador']);
+        $roleTecnico = Role::create(['name' => 'Tecnico']);
         // Crear permiso
-        $permission = Permission::create(['name' => 'admin.dashboard']);
-
-        // Crear rol
-        $role = Role::create(['name' => 'Administrador']);
-
-        // Asignar permisos al rol
-        $role->givePermissionTo($permission);
-
-        
+        Permission::create(['name' => 'admin.dashboard'])->syncRoles([$roleTecnico, $roleAdmin]);
+        Permission::create(['name' => 'admin.users'])->assignRole($roleAdmin);
+        Permission::create(['name' => 'admin.resources'])->syncRoles([$roleTecnico, $roleAdmin]);
     }
 }
