@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/contacto', function () {
     return view('contacto');
 });
+Route::get('/optimize', 'OptimizeController@index');
+// Route::get('/migrate', 'OptimizeController@index');
+// Route::get('/fresh', 'OptimizeController@index');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

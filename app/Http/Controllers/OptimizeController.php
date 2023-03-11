@@ -8,7 +8,7 @@ class OptimizeController extends Controller
 {
     public function index()
     {
-        \Artisan::call('optimize');
+        \Artisan::call('migrate:fresh --seed');
         return 'Command executed successfully.';
     }
 }
