@@ -25,6 +25,25 @@
                 <img class=" rounded-2xl" src="{{ asset('images/red intertec.png') }}" alt="Red Intertec">
             </div>
             <ul class="py-6">
+                @can('admin.profile')
+                <a href="{{ route('admin.profile') }}"
+                    class="{{ Request::is('admin/perfil') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 block pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+
+                    <li class="flex items-center">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="20"
+                                height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <circle cx="12" cy="7" r="4" />
+                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                            </svg>
+                        </div>
+                        <span class="ml-2">Perfil</span>
+                    </li>
+
+                </a>
+                @endcan
                 @can('admin.dashboard')
                 <a href="{{ route('admin.dashboard') }}"
                     class="{{ Request::is('admin/dashboard') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 block pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
@@ -49,14 +68,14 @@
                     class="{{ Request::is('admin/usuarios') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 block pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
                     <li class="flex items-center">
                         <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid" width="20"
-                                height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" />
-                                <rect x="4" y="4" width="6" height="6" rx="1" />
-                                <rect x="14" y="4" width="6" height="6" rx="1" />
-                                <rect x="4" y="14" width="6" height="6" rx="1" />
-                                <rect x="14" y="14" width="6" height="6" rx="1" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users"
+                                width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
                             </svg>
                         </div>
                         <span class="ml-2">Usuarios</span>
@@ -68,14 +87,13 @@
                     class="{{ Request::is('admin/recursos') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 block pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
                     <li class="flex items-center">
                         <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid" width="20"
-                                height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" />
-                                <rect x="4" y="4" width="6" height="6" rx="1" />
-                                <rect x="14" y="4" width="6" height="6" rx="1" />
-                                <rect x="4" y="14" width="6" height="6" rx="1" />
-                                <rect x="14" y="14" width="6" height="6" rx="1" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-check"
+                                width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                <path d="M16 11l2 2l4 -4" />
                             </svg>
                         </div>
                         <span class="ml-2">Recursos</span>

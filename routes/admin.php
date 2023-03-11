@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Admin\Dashboard\Dashboard as Dashboard;
+use App\Http\Livewire\Admin\Dashboard\Dashboard;
+use App\Http\Livewire\Admin\Profile\Profile;
 use App\Http\Livewire\Admin\User\Users;
 
 /*
@@ -14,6 +15,8 @@ use App\Http\Livewire\Admin\User\Users;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/perfil', Profile::class)->middleware('can:admin.profile')->name('admin.profile');
 
 Route::get('/dashboard', Dashboard::class)->middleware('can:admin.dashboard')->name('admin.dashboard');
 

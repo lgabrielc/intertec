@@ -16,5 +16,6 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'admin.dashboard'])->syncRoles([$roleTecnico, $roleAdmin]);
         Permission::create(['name' => 'admin.users'])->assignRole($roleAdmin);
         Permission::create(['name' => 'admin.resources'])->syncRoles([$roleTecnico, $roleAdmin]);
+        Permission::create(['name' => 'admin.profile'])->syncRoles([$roleTecnico, $roleAdmin]);
     }
 }

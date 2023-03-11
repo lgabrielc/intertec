@@ -15,23 +15,23 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $userAdmin = User::create([
-            'name' => 'Luis Gabriel',
-            // 'apellido' => 'Calloapaza Vilca',
+            'nombre' => 'Luis Gabriel',
+            'apellido' => 'Coaquira Calloapaza',
             'email' => 'kidmeg100@hotmail.com',
-            // 'dni' => '40135285',
-            // 'direccion' => 'Oasis de Villa el Salvador',
-            // 'telefono' => '990039886',
-            // 'estado_id' => '1',
+            'dni' => '74712308',
+            'direccion' => 'Oasis de Villa el Salvador',
+            'telefono' => '990039886',
+            'estado_id' => '1',
             'password' => bcrypt('74712308'),
         ]);
         $userTecnico = User::create([
-            'name' => 'Luis Gabriel',
-            // 'apellido' => 'Calloapaza Vilca',
-            'email' => 'kidmeg200@hotmail.com',
-            // 'dni' => '40135285',
-            // 'direccion' => 'Oasis de Villa el Salvador',
-            // 'telefono' => '990039886',
-            // 'estado_id' => '1',
+            'nombre' => 'Gabriel',
+            'apellido' => 'Calloapaza Torres',
+            'email' => 'kidmeg200@admin.com',
+            'dni' => '40135285',
+            'direccion' => 'Oasis de Villa el Salvador',
+            'telefono' => '990039886',
+            'estado_id' => '1',
             'password' => bcrypt('74712308'),
         ]);
         $userAdmin->assignRole('Administrador');

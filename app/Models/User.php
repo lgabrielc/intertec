@@ -28,10 +28,15 @@ class User extends Authenticatable
      */
 
     protected $fillable = [
-        'name',
+        'dni',
+        'nombre',
+        'apellido',
+        'direccion',
+        'last_login',
+        'telefono',
+        'estado_id',
         'email',
         'password',
-        'last_login',
     ];
     protected $dates = [
         'last_login',
