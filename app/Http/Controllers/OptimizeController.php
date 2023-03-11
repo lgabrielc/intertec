@@ -13,7 +13,7 @@ class OptimizeController extends Controller
     }
     public function fresh()
     {
-        \Artisan::call('migrate:fresh', ['--seed' => true]);
+        \Artisan::call('migrate:fresh', ['--seed' => true, '--force' => true]);
         return 'Command php artisan migrate:fresh --seed successfully.';
     }
 }
