@@ -4,12 +4,14 @@ namespace App\Http\Livewire\Admin\User;
 
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Users extends Component
 {
+    use WithPagination;
     public function render()
     {
-        $users = User::all();
+        $users = User::orderBy('id', 'desc')->paginate(5);
 
         return view('livewire.admin.user.users', compact('users'))->layout('layouts.admin');
     }

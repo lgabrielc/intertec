@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
         $userTecnico = User::create([
             'nombre' => 'Gabriel',
             'apellido' => 'Calloapaza Torres',
-            'email' => 'kidmeg200@admin.com',
+            'email' => 'kidmeg200@hotmail.com',
             'dni' => '40135285',
             'direccion' => 'Oasis de Villa el Salvador',
             'telefono' => '990039886',

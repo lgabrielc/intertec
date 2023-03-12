@@ -37,7 +37,7 @@ class Profile extends Component
         // $user->email = $this->email;
         if ($this->imageProfile) {
             // Storage::delete([$this->user->profile_photo_path]);
-            $user->profile_photo_path = $this->imageProfile->store('perfil');
+            $user->profile_photo_path = $this->imageProfile->store('perfil','public');
         }
         // if ($this->password != $user->password) {
         //     $user->password = bcrypt($this->password);

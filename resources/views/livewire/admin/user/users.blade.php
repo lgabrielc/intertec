@@ -100,497 +100,113 @@
             </div>
         </div>
         <div class="w-full overflow-x-scroll xl:overflow-x-hidden">
-            <table class="min-w-full bg-white dark:bg-gray-800">
-                <thead>
-                    <tr class="w-full h-16 py-8 border-b border-gray-300">
-                        {{-- <th
-                            class="pl-8 pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
-                            <input placeholder="check box" type="checkbox"
-                                class="relative w-5 h-5 bg-white border border-gray-400 rounded cursor-pointer dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                                onclick="checkAll(this)" />
-                        </th>
-                        <th
-                            class="pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
-                            <div class="relative w-10 text-gray-600 opacity-0 cursor-default dark:text-gray-400">
-                                <div
-                                    class="absolute top-0 right-0 flex items-center justify-center w-5 h-5 mr-2 -mt-1 text-xs text-white bg-indigo-700 rounded-full">
-                                    3</div>
-                                <img class="dark:hidden"
-                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8.svg"
-                                    alt="icon-tabler-file">
-                                <img class="hidden dark:block"
-                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8dark.svg"
-                                    alt="icon-tabler-file">
-                            </div>
-                        </th> --}}
-                        <th role="columnheader"
-                            class="pl-8 pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
-                            ID</th>
-                        <th role="columnheader"
-                            class="pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
-                            Nombre</th>
-                        <th role="columnheader"
-                            class="pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
-                            Email</th>
-                        <th role="columnheader"
-                            class="pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
-                            Rol</th>
-                        <th role="columnheader"
-                            class="pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
-                            Ultimo ingreso</th>
-                        <th
-                            class="pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
-                            <div class="w-2 h-2 bg-indigo-400 rounded-full opacity-0"></div>
-                        </th>
-                        <td role="columnheader"
-                            class="pr-8 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
-                            More</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($users as $user)
-                    <tr class="h-24 border-b border-gray-300">
-                        {{-- <td
-                            class="pl-8 pr-6 text-sm leading-4 tracking-normal text-left text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            <input placeholder="check box" type="checkbox"
-                                class="relative w-5 h-5 bg-white border border-gray-400 rounded cursor-pointer dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                                onclick="tableInteract(this)" />
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            <div aria-label="documents" role="contentinfo"
-                                class="relative w-10 text-gray-600 dark:text-gray-400">
-                                <div
-                                    class="absolute top-0 right-0 flex items-center justify-center w-5 h-5 mr-2 -mt-1 text-xs text-white bg-indigo-700 rounded-full">
-                                    3</div>
-                                <img class="dark:hidden"
-                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8.svg"
-                                    alt="icon-tabler-file">
-                                <img class="hidden dark:block"
-                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8dark.svg"
-                                    alt="icon-tabler-file">
-                            </div>
-                        </td> --}}
-                        <td
-                            class="pl-8 pr-6 text-sm leading-4 tracking-normal text-left text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            {{$user->id}}</td>
-                        <td class="pr-6 whitespace-no-wrap">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8">
-                                    <img src="{{ auth()->user()->profile_photo_url }}"
-                                        alt="Display Avatar of Carrie Anthony" role="img"
-                                        class="w-full h-full overflow-hidden rounded-full shadow" />
-                                </div>
-                                <p class="ml-2 text-sm leading-4 tracking-normal text-gray-800 dark:text-gray-100">
-                                    {{$user->name}}</p>
-                            </div>
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            {{$user->email}}</td>
+            @if (count($users))
+                <table class="min-w-full bg-white dark:bg-gray-800">
+                    <thead>
+                        <tr class="w-full h-16 py-8 border-b border-gray-300">
+                            <th role="columnheader"
+                                class="pl-8 pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
+                                ID</th>
+                            <th role="columnheader"
+                                class="pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
+                                Nombre</th>
+                            <th role="columnheader"
+                                class="pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
+                                Email</th>
+                            <th role="columnheader"
+                                class="pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
+                                Rol</th>
+                            <th role="columnheader"
+                                class="pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
+                                Ultimo ingreso</th>
+                            <th
+                                class="pr-6 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
+                                <div class="w-2 h-2 bg-indigo-400 rounded-full opacity-0"></div>
+                            </th>
+                            <td role="columnheader"
+                                class="pr-8 text-sm font-normal leading-4 tracking-normal text-left text-gray-600 dark:text-gray-400">
+                                More</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($users as $user)
+                            <tr class="h-24 border-b border-gray-300">
+                                <td
+                                    class="pl-8 pr-6 text-sm leading-4 tracking-normal text-left text-gray-800 whitespace-no-wrap dark:text-gray-100">
+                                    {{ $user->id }}</td>
+                                <td class="pr-6 whitespace-no-wrap">
+                                    <div class="flex items-center">
+                                        <div class="object-cover w-8 h-10 rounded-full">
+                                            <img src="{{ asset('storage/' . $user->profile_photo_path) }}"
+                                                alt="Display Avatar of Carrie Anthony" role="img"
+                                                class="w-full h-full overflow-hidden rounded-full shadow" />
+                                        </div>
+                                        <p
+                                            class="ml-2 text-sm leading-4 tracking-normal text-gray-800 dark:text-gray-100">
+                                            {{ $user->nombre }}</p>
+                                    </div>
+                                </td>
+                                <td
+                                    class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
+                                    {{ $user->email }}</td>
 
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            {{($user->getRoleNames()->first())}}</td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            {{-- {{ $user->last_login ? $user->last_login : 'Nunca ha iniciado
-                            sesión' }} --}}
-                            {{ $user->last_login ? \Carbon\Carbon::parse($user->last_login)->format('H:i:s') : 'Nunca
-                            inició sesión' }}
-                            {{-- {{$user->last_login && $user->last_login instanceof \Carbon\Carbon ?
-                            $user->last_login->format('H:i:s') : 'Nunca inició sesión'}} --}}
+                                <td
+                                    class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
+                                    {{ $user->getRoleNames()->first() }}</td>
+                                <td
+                                    class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
+                                    {{ $user->last_login ? \Carbon\Carbon::parse($user->last_login)->format('H:i:s') : 'Nunca inició sesión' }}
+                                </td>
 
-                        </td>
-                        <td class="pr-6">
-                            <div class="w-2 h-2 bg-indigo-400 rounded-full"></div>
-                        </td>
-                        <td x-data="{
-                            open: false,
-                            toggle() {
-                                if (this.open) {
-                                    return this.close()
-                                }
-                 
-                                this.$refs.button.focus()
-                 
-                                this.open = true
-                            },
-                            close(focusAfter) {
-                                if (! this.open) return
-                 
-                                this.open = false
-                 
-                                focusAfter && focusAfter.focus()
-                            }
-                        }" x-on:keydown.escape.prevent.stop="close($refs.button)"
-                            x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
-                            x-id="['dropdown-button']" class="relative pr-8">
-                            <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
-                                :aria-controls="$id('dropdown-button')" type="button" aria-label="dropdown"
-                                role="button"
-                                class="text-gray-500 border border-transparent rounded cursor-pointer dropbtn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
-                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg9.svg"
-                                    alt="dropdown">
-                            </button>
-                            <div x-ref="panel" x-show="open" x-transition.origin.top.left
-                                x-on:click.outside="close($refs.button)" :id="$id('dropdown-button')"
-                                style="display: none;"
-                                class="absolute left-0 z-10 hidden w-32 mt-1 -ml-12 shadow-md dropdown-content">
-                                <ul class="py-1 bg-white rounded shadow dark:bg-gray-800">
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Edit</li>
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Delete</li>
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Duplicate</li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    @endforeach
-
-                    {{-- <tr class="h-24 border-b border-gray-300">
-                        <td
-                            class="pl-8 pr-6 text-sm leading-4 tracking-normal text-left text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            <input placeholder="check box" type="checkbox"
-                                class="relative w-5 h-5 bg-white border border-gray-400 rounded cursor-pointer dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                                onclick="tableInteract(this)" />
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            <div class="relative w-10 text-gray-400">
-                                <img class="dark:hidden"
-                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8.svg"
-                                    alt="icon-tabler-file">
-                                <img class="hidden dark:block"
-                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8dark.svg"
-                                    alt="icon-tabler-file">
-                            </div>
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            #MC10023</td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            Toyota Motors</td>
-                        <td class="pr-6 whitespace-no-wrap">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8">
-                                    <img src="https://tuk-cdn.s3.amazonaws.com/assets/components/advance_tables/at_2.png"
-                                        alt="Display Avatar of Carrie Anthony" role="img"
-                                        class="w-full h-full overflow-hidden rounded-full shadow" />
-                                </div>
-                                <p class="ml-2 text-sm leading-4 tracking-normal text-gray-800 dark:text-gray-100">
-                                    Carrie Anthony</p>
-                            </div>
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            $2,500</td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            02.03.20</td>
-                        <td class="pr-6">
-                            <div class="w-2 h-2 bg-red-400 rounded-full"></div>
-                        </td>
-                        <td class="relative pr-8">
-                            <button onclick="dropdownFunction(this)" aria-label="dropdown" role="button"
-                                class="text-gray-500 border border-transparent rounded cursor-pointer dropbtn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
-                                aria-label="Options expandable" role="button">
-                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg9.svg"
-                                    alt="dropdown">
-                            </button>
-                            <div class="absolute left-0 z-10 hidden w-32 mt-1 -ml-12 shadow-md dropdown-content">
-                                <ul class="py-1 bg-white rounded shadow dark:bg-gray-800">
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Edit</li>
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Delete</li>
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Duplicate</li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="h-24 border-b border-gray-300">
-                        <td
-                            class="pl-8 pr-6 text-sm leading-4 tracking-normal text-left text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            <input placeholder="check box" type="checkbox"
-                                class="relative w-5 h-5 bg-white border border-gray-400 rounded cursor-pointer dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                                onclick="tableInteract(this)" />
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            <div class="relative w-10 text-gray-400">
-                                <img class="dark:hidden"
-                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8.svg"
-                                    alt="icon-tabler-file">
-                                <img class="hidden dark:block"
-                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8dark.svg"
-                                    alt="icon-tabler-file">
-                            </div>
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            #MC10023</td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            Toyota Motors</td>
-                        <td class="pr-6 whitespace-no-wrap">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8">
-                                    <img src="https://tuk-cdn.s3.amazonaws.com/assets/components/advance_tables/at_3.png"
-                                        alt="Display Avatar of Carrie Anthony" role="img"
-                                        class="w-full h-full overflow-hidden rounded-full shadow" />
-                                </div>
-                                <p class="ml-2 text-sm leading-4 tracking-normal text-gray-800 dark:text-gray-100">
-                                    Carrie Anthony</p>
-                            </div>
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            $2,500</td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            02.03.20</td>
-                        <td class="pr-6">
-                            <div class="w-2 h-2 bg-indigo-400 rounded-full"></div>
-                        </td>
-                        <td class="relative pr-8">
-                            <button onclick="dropdownFunction(this)" aria-label="dropdown" role="button"
-                                class="text-gray-500 border border-transparent rounded cursor-pointer dropbtn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
-                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg9.svg"
-                                    alt="dropdown">
-                            </button>
-                            <div class="absolute left-0 z-10 hidden w-32 mt-1 -ml-12 shadow-md dropdown-content">
-                                <ul class="py-1 bg-white rounded shadow dark:bg-gray-800">
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Edit</li>
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Delete</li>
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Duplicate</li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="h-24 border-b border-gray-300">
-                        <td
-                            class="pl-8 pr-6 text-sm leading-4 tracking-normal text-left text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            <input placeholder="check box" type="checkbox"
-                                class="relative w-5 h-5 bg-white border border-gray-400 rounded cursor-pointer dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                                onclick="tableInteract(this)" />
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            <div class="relative w-10 text-gray-400">
-                                <img class="dark:hidden"
-                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8.svg"
-                                    alt="icon-tabler-file">
-                                <img class="hidden dark:block"
-                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8dark.svg"
-                                    alt="icon-tabler-file">
-                            </div>
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            #MC10023</td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            Toyota Motors</td>
-                        <td class="pr-6 whitespace-no-wrap">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8">
-                                    <img src="https://tuk-cdn.s3.amazonaws.com/assets/components/advance_tables/at_1.png"
-                                        alt="Display Avatar of Carrie Anthony" role="img"
-                                        class="w-full h-full overflow-hidden rounded-full shadow" />
-                                </div>
-                                <p class="ml-2 text-sm leading-4 tracking-normal text-gray-800 dark:text-gray-100">
-                                    Carrie Anthony</p>
-                            </div>
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            $2,500</td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            02.03.20</td>
-                        <td class="pr-6">
-                            <div class="w-2 h-2 bg-indigo-400 rounded-full"></div>
-                        </td>
-                        <td class="relative pr-8">
-                            <button onclick="dropdownFunction(this)" aria-label="dropdown" role="button"
-                                class="text-gray-500 border border-transparent rounded cursor-pointer dropbtn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 ">
-                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg9.svg"
-                                    alt="dropdown">
-                            </button>
-                            <div class="absolute left-0 z-10 hidden w-32 mt-1 -ml-12 shadow-md dropdown-content">
-                                <ul class="py-1 bg-white rounded shadow dark:bg-gray-800">
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Edit</li>
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Delete</li>
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Duplicate</li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="h-24 border-b border-gray-300">
-                        <td
-                            class="pl-8 pr-6 text-sm leading-4 tracking-normal text-left text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            <input placeholder="check box" type="checkbox"
-                                class="relative w-5 h-5 bg-white border border-gray-400 rounded cursor-pointer dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                                onclick="tableInteract(this)" />
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            <div class="relative w-10">
-                                <div
-                                    class="absolute top-0 right-0 flex items-center justify-center w-5 h-5 mr-2 -mt-1 text-xs text-white bg-indigo-700 rounded-full">
-                                    1</div>
-                                <div class="text-gray-600 dark:text-gray-400">
-                                    <img class="dark:hidden"
-                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8.svg"
-                                        alt="icon-tabler-file">
-                                    <img class="hidden dark:block"
-                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8dark.svg"
-                                        alt="icon-tabler-file">
-                                </div>
-                            </div>
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            #MC10023</td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            Toyota Motors</td>
-                        <td class="pr-6 whitespace-no-wrap">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8">
-                                    <img src="https://tuk-cdn.s3.amazonaws.com/assets/components/advance_tables/at_2.png"
-                                        alt="Display Avatar of Carrie Anthony" role="img"
-                                        class="w-full h-full overflow-hidden rounded-full shadow" />
-                                </div>
-                                <p class="ml-2 text-sm leading-4 tracking-normal text-gray-800 dark:text-gray-100">
-                                    Carrie Anthony</p>
-                            </div>
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            $2,500</td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            02.03.20</td>
-                        <td class="pr-6">
-                            <div class="w-2 h-2 bg-red-400 rounded-full"></div>
-                        </td>
-                        <td class="relative pr-8">
-                            <button onclick="dropdownFunction(this)" aria-label="dropdown" role="button"
-                                class="text-gray-500 border border-transparent rounded cursor-pointer dropbtn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
-                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg9.svg"
-                                    alt="dropdown">
-                            </button>
-                            <div class="absolute left-0 z-10 hidden w-32 mt-1 -ml-12 shadow-md dropdown-content">
-                                <ul class="py-1 bg-white rounded shadow dark:bg-gray-800">
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Edit</li>
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Delete</li>
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Duplicate</li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="h-24 border-b border-gray-300">
-                        <td
-                            class="pl-8 pr-6 text-sm leading-4 tracking-normal text-left text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            <input placeholder="check box" type="checkbox"
-                                class="relative w-5 h-5 bg-white border border-gray-400 rounded cursor-pointer dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                                onclick="tableInteract(this)" />
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            <div class="relative w-10">
-                                <div
-                                    class="absolute top-0 right-0 flex items-center justify-center w-5 h-5 mr-2 -mt-1 text-xs text-white bg-indigo-700 rounded-full">
-                                    5</div>
-                                <div class="text-gray-600 dark:text-gray-400">
-                                    <img class="dark:hidden"
-                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8.svg"
-                                        alt="icon-tabler-file">
-                                    <img class="hidden dark:block"
-                                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg8dark.svg"
-                                        alt="icon-tabler-file">
-                                </div>
-                            </div>
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            #MC10023</td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            Toyota Motors</td>
-                        <td class="pr-6 whitespace-no-wrap">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8">
-                                    <img src="https://tuk-cdn.s3.amazonaws.com/assets/components/advance_tables/at_3.png"
-                                        alt="Display Avatar of Carrie Anthony" role="img"
-                                        class="w-full h-full overflow-hidden rounded-full shadow" />
-                                </div>
-                                <p class="ml-2 text-sm leading-4 tracking-normal text-gray-800 dark:text-gray-100">
-                                    Carrie Anthony</p>
-                            </div>
-                        </td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            $2,500</td>
-                        <td
-                            class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap dark:text-gray-100">
-                            02.03.20</td>
-                        <td class="pr-6">
-                            <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
-                        </td>
-                        <td class="relative pr-8">
-                            <button onclick="dropdownFunction(this)" aria-label="dropdown" role="button"
-                                class="text-gray-500 border border-transparent rounded cursor-pointer dropbtn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
-                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg9.svg"
-                                    alt="dropdown">
-                            </button>
-                            <div class="absolute left-0 z-10 hidden w-32 mt-1 -ml-12 shadow-md dropdown-content">
-                                <ul class="py-1 bg-white rounded shadow dark:bg-gray-800">
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Edit</li>
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Delete</li>
-                                    <li
-                                        class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
-                                        Duplicate</li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr> --}}
-                </tbody>
-            </table>
+                                <td class="pr-6">
+                                    @if ($user->estado_id = 1)
+                                        <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                    @else
+                                        <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                                    @endif
+                                </td>
+                                <td>
+                                    <div x-data="{ open: false }" class="relative">
+                                        <button type="button" x-on:click="open = !open"
+                                            x-bind:aria-expanded="open ? 'true' : 'false'" aria-haspopup="true"
+                                            aria-label="dropdown" role="button"
+                                            class="text-gray-500 border border-transparent rounded cursor-pointer dropbtn focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+                                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg9.svg"
+                                                alt="dropdown">
+                                        </button>
+                                        <div x-show="open" x-on:click.away="open = false"
+                                            class="absolute left-0 z-10 w-32 mt-1 -ml-12 shadow-md dropdown-content">
+                                            <ul class="py-1 bg-white rounded shadow dark:bg-gray-800">
+                                                <li
+                                                    class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
+                                                    Edit
+                                                </li>
+                                                <li
+                                                    class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
+                                                    Delete
+                                                </li>
+                                                <li
+                                                    class="px-3 py-3 text-sm font-normal leading-3 tracking-normal text-gray-600 cursor-pointer dark:text-gray-400 hover:bg-indigo-700 hover:text-white">
+                                                    Duplicate
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                @if ($users->hasPages())
+                    <div class="px-6 py-3">
+                        {{ $users->links() }}
+                    </div>
+                @endif
+            @else
+                <div class="px-6 py-4">
+                    No existe ningún registro coincidente
+                </div>
+            @endif
         </div>
     </div>
 </div>
