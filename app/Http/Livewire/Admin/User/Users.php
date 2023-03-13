@@ -9,9 +9,15 @@ use Livewire\WithPagination;
 class Users extends Component
 {
     use WithPagination;
+
+
+    public function update_user()
+    {
+
+    }
     public function render()
     {
-        $users = User::orderBy('id', 'desc')->paginate(5);
+        $users = User::orderBy('id', 'asc')->paginate(5);
 
         return view('livewire.admin.user.users', compact('users'))->layout('layouts.admin');
     }

@@ -27,21 +27,21 @@ class Profile extends Component
     public function update_profile()
     {
         $user = User::find(auth()->user()->id);
-        // $this->validate([
-        //     'email' => 'required|email|unique:users,email,' . $user->id,
-        //     'direccion' => 'required|min:3|max:255',
-        //     'password' => 'required|min:8',
-        //     'image' => 'nullable|image|max:1024'
-        // ]);
-        // $user->direccion = $this->direccion;
-        // $user->email = $this->email;
+        $this->validate([
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'direccion' => 'required|min:3|max:255',
+            'password' => 'required|min:8',
+            'imageProfile' => 'nullable|image|max:1024'
+        ]);
+        $user->direccion = $this->direccion;
+        $user->email = $this->email;
         if ($this->imageProfile) {
-            // Storage::delete([$this->user->profile_photo_path]);
-            $user->profile_photo_path = $this->imageProfile->store('perfil','public');
+            Storage::delete([$this->user->profile_photo_path]);
+            $user->profile_photo_path = $this->imageProfile->store('perfil', 'public');
         }
-        // if ($this->password != $user->password) {
-        //     $user->password = bcrypt($this->password);
-        // }
+        if ($this->password != $user->password) {
+            $user->password = bcrypt($this->password);
+        }
         $user->save();
     }
     public function render()

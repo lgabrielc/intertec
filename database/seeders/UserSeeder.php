@@ -34,7 +34,51 @@ class UserSeeder extends Seeder
             'estado_id' => '1',
             'password' => bcrypt('74712308'),
         ]);
+        $userTecnico2 = User::create([
+            'nombre' => 'Gabriel',
+            'apellido' => 'Calloapaza Torres',
+            'email' => 'kidmeg300@hotmail.com',
+            'dni' => '40135285',
+            'direccion' => 'Oasis de Villa el Salvador',
+            'telefono' => '990039886',
+            'estado_id' => '1',
+            'password' => bcrypt('74712308'),
+        ]);
+        $userTecnico3 = User::create([
+            'nombre' => 'Gabriel',
+            'apellido' => 'Calloapaza Torres',
+            'email' => 'kidmeg400@hotmail.com',
+            'dni' => '40135285',
+            'direccion' => 'Oasis de Villa el Salvador',
+            'telefono' => '990039886',
+            'estado_id' => '1',
+            'password' => bcrypt('74712308'),
+        ]);
+        $userTecnico4 = User::create([
+            'nombre' => 'Gabriel',
+            'apellido' => 'Calloapaza Torres',
+            'email' => 'kidmeg500@hotmail.com',
+            'dni' => '40135285',
+            'direccion' => 'Oasis de Villa el Salvador',
+            'telefono' => '990039886',
+            'estado_id' => '1',
+            'password' => bcrypt('74712308'),
+        ]);
+        $userTecnico5 = User::create([
+            'nombre' => 'Gabriel',
+            'apellido' => 'Calloapaza Torres',
+            'email' => 'kidmeg600@hotmail.com',
+            'dni' => '40135285',
+            'direccion' => 'Oasis de Villa el Salvador',
+            'telefono' => '990039886',
+            'estado_id' => '1',
+            'password' => bcrypt('74712308'),
+        ]);
         $userAdmin->assignRole('Administrador');
         $userTecnico->assignRole('Tecnico');
+        $userTecnico2->assignRole('Tecnico');
+        $userTecnico3->assignRole('Tecnico');
+        $userTecnico4->assignRole('Tecnico');
+        $userTecnico5->assignRole('Tecnico');
     }
 }

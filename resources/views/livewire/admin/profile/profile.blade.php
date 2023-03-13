@@ -50,13 +50,13 @@
                         <label for="usuario" class="pb-2 text-sm font-bold text-gray-800 ">Email</label>
                         <input tabindex="0" type="text" id="usuario" name="usuario"
                             class="py-3 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
-                            placeholder="ejemplo@hotmai.com" />
+                            wire:model='email' placeholder="ejemplo@hotmai.com" />
                     </div>
                     <div class="flex flex-col w-full mt-6 xl:w-2/6 lg:w-1/2 md:w-1/2">
                         <label for="usuario" class="pb-2 text-sm font-bold text-gray-800 ">Password</label>
-                        <input tabindex="0" type="text" id="usuario" name="usuario"
+                        <input tabindex="0" type="password" id="usuario" name="usuario"
                             class="py-3 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
-                            placeholder="ejemplo@hotmai.com" />
+                            wire:model='password' />
                     </div>
                 </div>
             </div>
@@ -80,20 +80,20 @@
                             <label for="FirstName" class="pb-2 text-sm font-bold text-gray-800 ">Nombres</label>
                             <input tabindex="0" type="text" id="FirstName" name="firstName"
                                 class="py-3 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
-                                placeholder="" />
+                                value="{{ $nombre }}" disabled />
                         </div>
                         <div class="flex flex-col mb-4 xl:w-1/4 lg:w-1/2 md:w-1/2">
                             <label for="LastName" class="pb-2 text-sm font-bold text-gray-800 ">Apellidos</label>
                             <input tabindex="0" type="text" id="LastName" name="lastName"
                                 class="py-3 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
-                                placeholder="" />
+                                value="{{ $apellido }}" disabled />
                         </div>
 
                         <div class="flex flex-col mb-4 xl:w-1/4 lg:w-1/2 md:w-1/2">
                             <label for="StreetAddress" class="pb-2 text-sm font-bold text-gray-800 ">Dirección</label>
                             <input tabindex="0" type="text" id="StreetAddress" name="streetAddress"
                                 class="py-3 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
-                                placeholder="" />
+                                wire:model='direccion' />
                         </div>
 
                     </div>
@@ -107,6 +107,7 @@
                     type="submit">Guardar</button>
             </div>
         </div>
+        
     </div>
     <style>
         .checkbox:checked {
@@ -150,32 +151,6 @@
         function handleProfilePictureChange(event) {
             const file = event.target.files[0];
             // Aquí puedes hacer lo que quieras con el archivo seleccionado, como mostrar una vista previa o subirlo al servidor
-        }
-    </script>
-    <script>
-        let elements = document.querySelectorAll("[data-menu]");
-        for (let i = 0; i < elements.length; i++) {
-            let main = elements[i];
-            main.addEventListener("click", function() {
-                let element = main.parentElement.parentElement;
-                let andicators = main.querySelectorAll("img");
-                let child = element.querySelector("ul");
-                if (child.classList.contains("opacity-0")) {
-                    child.classList.toggle("invisible");
-                    child.classList.toggle("visible");
-                    andicators[0].style.display = "block";
-                    andicators[1].style.display = "none";
-                } else {
-                    setTimeout(function() {
-                        child.classList.toggle("invisible");
-                        child.classList.toggle("visible");
-                    }, 300);
-                    andicators[0].style.display = "none";
-                    andicators[1].style.display = "block";
-                }
-                child.classList.toggle("opacity-0");
-                child.classList.toggle("opacity-100");
-            });
         }
     </script>
     </div>
