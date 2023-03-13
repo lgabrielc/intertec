@@ -1,4 +1,6 @@
-    <div class="px-8 mb-32 bg-white">
+    <div class="px-8 bg-white">
+        <br>
+        <x-banner />
         <div class="bg-white ">
             <div class="container px-4 mx-auto bg-white rounded ">
                 <div class="py-5 bg-white border-b border-gray-300 xl:w-full ">
@@ -13,7 +15,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-11/12 mx-auto my-4 cursor-pointer xl:w-full xl:mx-0">
+                <div class="w-11/12 mx-auto my-3 cursor-pointer xl:w-full xl:mx-0">
                     @if ($imageProfile)
                         <div class="absolute flex items-center justify-center w-20 h-20 ml-12 -mb-10 bg-center bg-no-repeat bg-cover rounded-full shadow "
                             onclick="document.getElementById('profile-picture-input').click();">
@@ -45,24 +47,30 @@
                         id="profile-picture-input" type="file" style="display:none;"
                         onchange="handleProfilePictureChange(event)">
                 </div>
-                <div class="w-11/12 mx-auto my-4 xl:w-full xl:mx-0">
+                <div class="w-11/12 mx-auto my-1 xl:w-full xl:mx-0">
                     <div class="flex flex-col w-full mt-28 xl:w-2/6 lg:w-1/2 md:w-1/2">
-                        <label for="usuario" class="pb-2 text-sm font-bold text-gray-800 ">Email</label>
+                        <label for="usuario" class="pb-1 text-sm font-bold text-gray-800 ">Email</label>
                         <input tabindex="0" type="text" id="usuario" name="usuario"
-                            class="py-3 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
+                            class="py-2 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
                             wire:model='email' placeholder="ejemplo@hotmai.com" />
+                        @error('email')
+                            <div class="text-red-600">{{ $message }}</div>
+                        @enderror
                     </div>
-                    <div class="flex flex-col w-full mt-6 xl:w-2/6 lg:w-1/2 md:w-1/2">
-                        <label for="usuario" class="pb-2 text-sm font-bold text-gray-800 ">Password</label>
+                    <div class="flex flex-col w-full mt-5 xl:w-2/6 lg:w-1/2 md:w-1/2">
+                        <label for="usuario" class="pb-1 text-sm font-bold text-gray-800 ">Password</label>
                         <input tabindex="0" type="password" id="usuario" name="usuario"
-                            class="py-3 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
+                            class="py-2 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
                             wire:model='password' />
+                        @error('password')
+                            <div class="text-red-600">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container px-4 mx-auto mt-8 bg-white rounded ">
-            <div class="py-5 border-b border-gray-300 xl:w-full ">
+        <div class="container px-4 mx-auto  bg-white rounded ">
+            <div class="pt-4 border-b border-gray-300 xl:w-full ">
                 <div class="flex items-center w-11/12 mx-auto xl:w-full xl:mx-0">
                     <p class="text-lg font-bold text-gray-800 ">Información Personal</p>
                     <div class="ml-2 text-gray-600 ">
@@ -75,25 +83,28 @@
             </div>
             <div class="pt-4 mx-auto">
                 <div class="container mx-auto">
-                    <div class="w-11/12 mx-auto my-4 xl:w-full xl:mx-0">
-                        <div class="flex flex-col mb-4 xl:w-1/4 lg:w-1/2 md:w-1/2">
-                            <label for="FirstName" class="pb-2 text-sm font-bold text-gray-800 ">Nombres</label>
+                    <div class="w-11/12 mx-auto my-2 xl:w-full xl:mx-0">
+                        <div class="flex flex-col mb-2 xl:w-1/4 lg:w-1/2 md:w-1/2">
+                            <label for="FirstName" class="pb-1 text-sm font-bold text-gray-800 ">Nombres</label>
                             <input tabindex="0" type="text" id="FirstName" name="firstName"
-                                class="py-3 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
+                                class="py-2 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
                                 value="{{ $nombre }}" disabled />
                         </div>
-                        <div class="flex flex-col mb-4 xl:w-1/4 lg:w-1/2 md:w-1/2">
-                            <label for="LastName" class="pb-2 text-sm font-bold text-gray-800 ">Apellidos</label>
+                        <div class="flex flex-col mb-2 xl:w-1/4 lg:w-1/2 md:w-1/2">
+                            <label for="LastName" class="pb-1 text-sm font-bold text-gray-800 ">Apellidos</label>
                             <input tabindex="0" type="text" id="LastName" name="lastName"
-                                class="py-3 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
+                                class="py-2 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
                                 value="{{ $apellido }}" disabled />
                         </div>
 
-                        <div class="flex flex-col mb-4 xl:w-1/4 lg:w-1/2 md:w-1/2">
-                            <label for="StreetAddress" class="pb-2 text-sm font-bold text-gray-800 ">Dirección</label>
+                        <div class="flex flex-col mb-3 xl:w-1/4 lg:w-1/2 md:w-1/2">
+                            <label for="StreetAddress" class="pb-1 text-sm font-bold text-gray-800 ">Dirección</label>
                             <input tabindex="0" type="text" id="StreetAddress" name="streetAddress"
-                                class="py-3 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
+                                class="py-2 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
                                 wire:model='direccion' />
+                            @error('direccion')
+                                <div class="text-red-600">{{ $message }}</div>
+                            @enderror
                         </div>
 
                     </div>
@@ -107,7 +118,7 @@
                     type="submit">Guardar</button>
             </div>
         </div>
-        
+
     </div>
     <style>
         .checkbox:checked {

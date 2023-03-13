@@ -36,13 +36,17 @@ class Profile extends Component
         $user->direccion = $this->direccion;
         $user->email = $this->email;
         if ($this->imageProfile) {
-            Storage::delete([$this->user->profile_photo_path]);
+            Storage::delete('public/' . $this->user->profile_photo_path);
             $user->profile_photo_path = $this->imageProfile->store('perfil', 'public');
         }
         if ($this->password != $user->password) {
             $user->password = bcrypt($this->password);
         }
         $user->save();
+        $this->dispatchBrowserEvent('banner-message', [
+            'style' => 'success',
+            'message' => '¡Perfil actualizado exitosamente!'
+        ]);
     }
     public function render()
     {

@@ -20,9 +20,9 @@
 <body class="w-full h-full bg-gray-200">
     <div class="flex flex-no-wrap">
         <!-- Sidebar starts -->
-        <div style="min-height: 700px" class="absolute hidden w-64 h-screen bg-gray-100 shadow lg:relative lg:block">
-            <div class="flex items-center w-full h-16 px-6 mt-6 ">
-                <img class=" rounded-2xl" src="{{ asset('images/red intertec.png') }}" alt="Red Intertec">
+        <div class="absolute hidden w-64 h-screen bg-white shadow lg:relative lg:block">
+            <div class="flex items-center w-full h-10 px-6 mt-12 mb-6 ">
+                <img class="rounded-2xl" src="{{ asset('images/tulogo.png') }}" alt="Red Intertec">
             </div>
             <ul class="py-6">
                 @can('admin.profile')
@@ -102,17 +102,16 @@
                 @endcan
             </ul>
         </div>
-        <div class="absolute z-40 w-full h-full transform -translate-x-full lg:hidden" id="mobile-nav">
+        <div class="absolute z-40 w-full h-screen transform -translate-x-full lg:hidden" id="mobile-nav">
             <div class="absolute w-full h-full bg-gray-800 opacity-50 lg:hidden" onclick="sidebarHandler(false)">
             </div>
             <div
-                class="absolute z-40 w-64 h-full pb-4 transition duration-150 ease-in-out bg-gray-100 shadow sm:relative md:w-96 lg:hidden">
+                class="absolute z-40 w-64 h-full pb-4 transition duration-150 ease-in-out bg-white shadow sm:relative md:w-96 lg:hidden">
                 <div class="flex flex-col justify-between w-full h-full">
                     <div>
                         <div class="flex items-center justify-between px-8">
-                            <div class="flex items-center w-full h-16">
-                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light_with_header_and_icons-svg1.svg"
-                                    alt="logo">
+                            <div class="flex items-center w-full h-8 mt-11 mb-2">
+                                <img class="rounded-2xl h-20 md:h-24" src="{{ asset('images/tulogo.png') }}" alt="logo">
                             </div>
                             <button aria-label="close sidebar" id="closeSideBar"
                                 class="flex items-center justify-center w-10 h-10 rounded focus:outline-none focus:ring-2 focus:ring-gray-800"
@@ -122,81 +121,99 @@
                             </button>
                         </div>
                         <ul class="py-6">
-                            <li
-                                class="pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-indigo-700 cursor-pointer focus:text-indigo-700 focus:outline-none">
-                                <div class="flex items-center">
-                                    <div class="w-6 h-6 md:w-8 md:h-8">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                            class="icon icon-tabler icon-tabler-grid" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" />
-                                            <rect x="4" y="4" width="6" height="6"
-                                                rx="1" />
-                                            <rect x="14" y="4" width="6" height="6"
-                                                rx="1" />
-                                            <rect x="4" y="14" width="6" height="6"
-                                                rx="1" />
-                                            <rect x="14" y="14" width="6" height="6"
-                                                rx="1" />
-                                        </svg>
-                                    </div>
-                                    <a href="javascript:void(0)"
-                                        class="ml-2 text-base xl:text-base md:text-2xl">Dashboard</a>
-                                </div>
-                            </li>
-                            <li
-                                class="py-2 pl-6 mt-4 mb-4 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                                <div class="flex items-center">
-                                    <div class="w-6 h-6 md:w-8 md:h-8">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                            class="icon icon-tabler icon-tabler-puzzle" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1" />
-                                        </svg>
-                                    </div>
-                                    <a href="javascript:void(0)"
-                                        class="ml-2 text-base xl:text-base md:text-2xl">Products</a>
-                                </div>
-                            </li>
-                            <li
-                                class="py-2 pl-6 mb-4 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                                <div class="flex items-center">
-                                    <div class="w-6 h-6 md:w-8 md:h-8">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                            class="icon icon-tabler icon-tabler-compass" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" />
-                                            <polyline points="8 16 10 10 16 8 14 14 8 16" />
-                                            <circle cx="12" cy="12" r="9" />
-                                        </svg>
-                                    </div>
-                                    <a href="javascript:void(0)"
-                                        class="ml-2 text-base xl:text-base md:text-2xl">Performance</a>
-                                </div>
-                            </li>
-                            <li
-                                class="py-2 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                                <div class="flex items-center">
-                                    <div class="w-6 h-6 md:w-8 md:h-8">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                            class="icon icon-tabler icon-tabler-code" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" />
-                                            <polyline points="7 8 3 12 7 16" />
-                                            <polyline points="17 8 21 12 17 16" />
-                                            <line x1="14" y1="4" x2="10" y2="20" />
-                                        </svg>
-                                    </div>
-                                    <a href="javascript:void(0)"
-                                        class="ml-2 text-base xl:text-base md:text-2xl">Deliverables</a>
-                                </div>
-                            </li>
+                            @can('admin.profile')
+                                <a href="{{ route('admin.profile') }}">
+                                    <li
+                                        class="pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-indigo-700 cursor-pointer focus:text-indigo-700 focus:outline-none">
+                                        <div class="flex items-center">
+                                            <div class="w-6 h-6 md:w-8 md:h-8">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="icon icon-tabler icon-tabler-user" width="20"
+                                                    height="20" viewBox="0 0 24 24" stroke-width="1.5"
+                                                    stroke="currentColor" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <circle cx="12" cy="7" r="4" />
+                                                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                                </svg>
+                                            </div>
+                                            <span class="ml-2 text-base xl:text-base md:text-2xl">Perfil</span>
+                                        </div>
+                                    </li>
+                                </a>
+                            @endcan
+                            @can('admin.dashboard')
+                                <a href="{{ route('admin.dashboard') }}">
+                                    <li
+                                        class="py-2 pl-6 mt-4 mb-4 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                        <div class="flex items-center">
+                                            <div class="w-6 h-6 md:w-8 md:h-8">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="icon icon-tabler icon-tabler-grid" width="20"
+                                                    height="20" viewBox="0 0 24 24" stroke-width="1.5"
+                                                    stroke="currentColor" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                                    <rect x="4" y="4" width="6" height="6"
+                                                        rx="1" />
+                                                    <rect x="14" y="4" width="6" height="6"
+                                                        rx="1" />
+                                                    <rect x="4" y="14" width="6" height="6"
+                                                        rx="1" />
+                                                    <rect x="14" y="14" width="6" height="6"
+                                                        rx="1" />
+                                                </svg>
+                                            </div>
+                                            <span class="ml-2 text-base xl:text-base md:text-2xl">Dashboard</span>
+                                        </div>
+                                    </li>
+                                </a>
+                            @endcan
+                            @can('admin.users')
+                                <a href="{{ route('admin.users') }}">
+                                    <li
+                                        class="py-2 pl-6 mb-4 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                        <div class="flex items-center">
+                                            <div class="w-6 h-6 md:w-8 md:h-8">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="icon icon-tabler icon-tabler-users" width="20"
+                                                    height="20" viewBox="0 0 24 24" stroke-width="1.5"
+                                                    stroke="#2c3e50" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <circle cx="9" cy="7" r="4" />
+                                                    <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                                    <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+                                                </svg>
+                                            </div>
+                                            <span class="ml-2 text-base xl:text-base md:text-2xl">Usuarios</span>
+                                        </div>
+                                    </li>
+                                </a>
+                            @endcan
+                            @can('admin.resources')
+                                <a href="{{ route('admin.resources') }}">
+                                    <li
+                                        class="py-2 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                        <div class="flex items-center">
+                                            <div class="w-6 h-6 md:w-8 md:h-8">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="icon icon-tabler icon-tabler-user-check" width="20"
+                                                    height="20" viewBox="0 0 24 24" stroke-width="1.5"
+                                                    stroke="#2c3e50" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <circle cx="9" cy="7" r="4" />
+                                                    <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                                    <path d="M16 11l2 2l4 -4" />
+                                                </svg>
+                                            </div>
+                                            <span class="ml-2 text-base xl:text-base md:text-2xl">Recursos</span>
+                                        </div>
+                                    </li>
+                                </a>
+                            @endcan
                         </ul>
                     </div>
                     <div class="w-full">
@@ -295,25 +312,30 @@
                                                     <circle cx="12" cy="7" r="4" />
                                                     <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                                                 </svg>
-                                                <a href="javascript:void(0)" class="ml-2 text-sm">My Profile</a>
+                                                <a href="javascript:void(0)" class="ml-2 text-sm">Mi Perfil</a>
                                             </div>
                                         </li>
-                                        <li
-                                            class="flex items-center justify-between w-full mt-2 text-gray-600 cursor-pointer hover:text-indigo-700">
-                                            <div class="flex items-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-logout" width="20"
-                                                    height="20" viewBox="0 0 24 24" stroke-width="1.5"
-                                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" />
-                                                    <path
-                                                        d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
-                                                    <path d="M7 12h14l-3 -3m0 6l3 -3" />
-                                                </svg>
-                                                <a href="javascript:void(0)" class="ml-2 text-sm">Sign out</a>
-                                            </div>
-                                        </li>
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <button type="submit">
+                                                <li
+                                                    class="flex items-center justify-between w-full mt-2 text-gray-600 cursor-pointer hover:text-indigo-700">
+                                                    <div class="flex items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="icon icon-tabler icon-tabler-logout" width="20"
+                                                            height="20" viewBox="0 0 24 24" stroke-width="1.5"
+                                                            stroke="currentColor" fill="none"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                                            <path
+                                                                d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                                                            <path d="M7 12h14l-3 -3m0 6l3 -3" />
+                                                        </svg>
+                                                        <span class="ml-2 text-sm">Salir</span>
+                                                    </div>
+                                                </li>
+                                            </button>
+                                        </form>
                                     </ul>
                                     <div class="relative">
                                         <img class="object-cover w-10 h-10 rounded-full"
