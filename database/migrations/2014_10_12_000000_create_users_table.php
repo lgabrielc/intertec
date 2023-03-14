@@ -20,8 +20,7 @@ return new class extends Migration
             $table->string('telefono')->nullable();
             $table->string('email')->unique();
             $table->dateTime('last_login')->nullable();
-            $table->unsignedBigInteger('estado_id');
-            $table->foreign('estado_id')->references('id')->on('states');
+            $table->boolean('estado');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

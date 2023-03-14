@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             'dni' => '74712308',
             'direccion' => 'Oasis de Villa el Salvador',
             'telefono' => '990039886',
-            'estado_id' => '1',
+            'estado' => '1',
             'password' => bcrypt('74712308'),
         ]);
         $userTecnico = User::create([
@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
             'dni' => '40135285',
             'direccion' => 'Oasis de Villa el Salvador',
             'telefono' => '990039886',
-            'estado_id' => '1',
+            'estado' => '1',
             'password' => bcrypt('74712308'),
         ]);
         $userTecnico2 = User::create([
@@ -41,7 +41,7 @@ class UserSeeder extends Seeder
             'dni' => '40135285',
             'direccion' => 'Oasis de Villa el Salvador',
             'telefono' => '990039886',
-            'estado_id' => '1',
+            'estado' => '1',
             'password' => bcrypt('74712308'),
         ]);
         $userTecnico3 = User::create([
@@ -51,7 +51,7 @@ class UserSeeder extends Seeder
             'dni' => '40135285',
             'direccion' => 'Oasis de Villa el Salvador',
             'telefono' => '990039886',
-            'estado_id' => '1',
+            'estado' => '1',
             'password' => bcrypt('74712308'),
         ]);
         $userTecnico4 = User::create([
@@ -61,7 +61,7 @@ class UserSeeder extends Seeder
             'dni' => '40135285',
             'direccion' => 'Oasis de Villa el Salvador',
             'telefono' => '990039886',
-            'estado_id' => '1',
+            'estado' => '1',
             'password' => bcrypt('74712308'),
         ]);
         $userTecnico5 = User::create([
@@ -71,7 +71,7 @@ class UserSeeder extends Seeder
             'dni' => '40135285',
             'direccion' => 'Oasis de Villa el Salvador',
             'telefono' => '990039886',
-            'estado_id' => '1',
+            'estado' => '1',
             'password' => bcrypt('74712308'),
         ]);
         $userAdmin->assignRole('Administrador');

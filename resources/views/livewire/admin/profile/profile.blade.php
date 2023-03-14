@@ -69,7 +69,7 @@
                 </div>
             </div>
         </div>
-        <div class="container px-4 mx-auto  bg-white rounded ">
+        <div class="container px-4 mx-auto bg-white rounded ">
             <div class="pt-4 border-b border-gray-300 xl:w-full ">
                 <div class="flex items-center w-11/12 mx-auto xl:w-full xl:mx-0">
                     <p class="text-lg font-bold text-gray-800 ">Información Personal</p>

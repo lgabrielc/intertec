@@ -9,11 +9,11 @@ use Livewire\WithPagination;
 class Users extends Component
 {
     use WithPagination;
+    public $toggle = true;
 
-
-    public function update_user()
+    public function update_state(User $user)
     {
-
+        dd($user);
     }
     public function render()
     {
