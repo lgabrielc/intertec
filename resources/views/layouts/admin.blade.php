@@ -18,6 +18,7 @@
 </head>
 
 <body class="w-full h-full bg-gray-200">
+
     <div class="flex flex-no-wrap">
         <!-- Sidebar starts -->
         <div class="absolute hidden w-64 h-screen bg-white shadow lg:relative lg:block">
@@ -27,8 +28,8 @@
             <ul class="py-6">
                 @can('admin.profile')
                     <a href="{{ route('admin.profile') }}"
-                        class="{{ Request::is('admin/perfil') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 block pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-
+                        class="{{ Request::is('admin/perfil') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} 
+                         block my-1 py-3 pl-6 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
                         <li class="flex items-center">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user"
@@ -41,12 +42,12 @@
                             </div>
                             <span class="ml-2">Perfil</span>
                         </li>
-
                     </a>
                 @endcan
                 @can('admin.dashboard')
                     <a href="{{ route('admin.dashboard') }}"
-                        class="{{ Request::is('admin/dashboard') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 block pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                        class="{{ Request::is('admin/dashboard') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} 
+                        block my-1 py-3 pl-6 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
                         <li class="flex items-center">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid"
@@ -65,12 +66,13 @@
                 @endcan
                 @can('admin.users')
                     <a href="{{ route('admin.users') }}"
-                        class="{{ Request::is('admin/usuarios') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 block pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                        class="{{ Request::is('admin/usuarios') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} 
+                        block my-1 py-3 pl-6 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
                         <li class="flex items-center">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users"
-                                    width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50"
-                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <circle cx="9" cy="7" r="4" />
                                     <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
@@ -84,12 +86,13 @@
                 @endcan
                 @can('admin.resources')
                     <a href="{{ route('admin.resources') }}"
-                        class="{{ Request::is('admin/recursos') ? 'bg-gray-200 text-indigo-700' : '' }} hover:bg-gray-300 block pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                        class="{{ Request::is('admin/recursos') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} 
+                        block my-1 py-3 pl-6 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
                         <li class="flex items-center">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-check"
                                     width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <circle cx="9" cy="7" r="4" />
                                     <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
@@ -111,7 +114,8 @@
                     <div>
                         <div class="flex items-center justify-between px-8">
                             <div class="flex items-center w-full h-8 mt-11 mb-2">
-                                <img class="rounded-2xl h-20 md:h-24" src="{{ asset('images/tulogo.png') }}" alt="logo">
+                                <img class="rounded-2xl h-20 md:h-24" src="{{ asset('images/tulogo.png') }}"
+                                    alt="logo">
                             </div>
                             <button aria-label="close sidebar" id="closeSideBar"
                                 class="flex items-center justify-center w-10 h-10 rounded focus:outline-none focus:ring-2 focus:ring-gray-800"
@@ -124,7 +128,7 @@
                             @can('admin.profile')
                                 <a href="{{ route('admin.profile') }}">
                                     <li
-                                        class="pt-5 pb-4 pl-6 text-sm leading-3 tracking-normal text-indigo-700 cursor-pointer focus:text-indigo-700 focus:outline-none">
+                                        class="pt-5 pb-4 pl-6 text-base leading-3 tracking-normal text-indigo-700 cursor-pointer focus:text-indigo-700 focus:outline-none">
                                         <div class="flex items-center">
                                             <div class="w-6 h-6 md:w-8 md:h-8">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +149,7 @@
                             @can('admin.dashboard')
                                 <a href="{{ route('admin.dashboard') }}">
                                     <li
-                                        class="py-2 pl-6 mt-4 mb-4 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                        class="py-2 pl-6 mt-4 mb-4 text-base leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
                                         <div class="flex items-center">
                                             <div class="w-6 h-6 md:w-8 md:h-8">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +176,7 @@
                             @can('admin.users')
                                 <a href="{{ route('admin.users') }}">
                                     <li
-                                        class="py-2 pl-6 mb-4 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                        class="py-2 pl-6 mb-4 text-base leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
                                         <div class="flex items-center">
                                             <div class="w-6 h-6 md:w-8 md:h-8">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -195,7 +199,7 @@
                             @can('admin.resources')
                                 <a href="{{ route('admin.resources') }}">
                                     <li
-                                        class="py-2 pl-6 text-sm leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                        class="py-2 pl-6 text-base leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
                                         <div class="flex items-center">
                                             <div class="w-6 h-6 md:w-8 md:h-8">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -224,7 +228,7 @@
                                         alt="Search">
                                 </div>
                                 <input
-                                    class="w-full py-2 pl-10 text-sm text-gray-600 placeholder-gray-600 bg-gray-200 rounded focus:outline-none"
+                                    class="w-full py-2 pl-10 text-base text-gray-600 placeholder-gray-600 bg-gray-200 rounded focus:outline-none"
                                     type="text" placeholder="Search" />
                             </div>
                         </div>
@@ -272,7 +276,7 @@
                                     alt="Search">
                             </div>
                             <input
-                                class="w-full py-2 pl-12 text-sm text-gray-600 placeholder-gray-600 bg-gray-100 border border-gray-100 rounded focus:outline-none focus:border-indigo-700"
+                                class="w-full py-2 pl-12 text-base text-gray-600 placeholder-gray-600 bg-gray-100 border border-gray-100 rounded focus:outline-none focus:border-indigo-700"
                                 type="text" placeholder="Search" />
                         </div>
                     </div>
@@ -312,7 +316,7 @@
                                                     <circle cx="12" cy="7" r="4" />
                                                     <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                                                 </svg>
-                                                <a href="javascript:void(0)" class="ml-2 text-sm">Mi Perfil</a>
+                                                <a href="javascript:void(0)" class="ml-2 text-base">Mi Perfil</a>
                                             </div>
                                         </li>
                                         <form method="POST" action="{{ route('logout') }}">
@@ -331,7 +335,7 @@
                                                                 d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
                                                             <path d="M7 12h14l-3 -3m0 6l3 -3" />
                                                         </svg>
-                                                        <span class="ml-2 text-sm">Salir</span>
+                                                        <span class="ml-2 text-base">Salir</span>
                                                     </div>
                                                 </li>
                                             </button>
@@ -346,7 +350,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="mx-3 text-sm text-gray-800">{{ auth()->user()->name }}</p>
+                                <p class="mx-3 text-base text-gray-800">{{ auth()->user()->name }}</p>
                                 <button aria-label="open profile options"
                                     class="text-gray-600 cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-600">
                                     <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light_with_header_and_icons-svg6.svg"
@@ -380,6 +384,7 @@
     @stack('modals')
     @livewireScripts
 </body>
+
 <script>
     function dropdownHandler(element) {
         let single = element.getElementsByTagName("ul")[0];

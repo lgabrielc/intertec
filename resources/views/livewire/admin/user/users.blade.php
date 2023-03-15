@@ -2,54 +2,6 @@
     <div class="bg-white rounded shadow ">
         <div class="flex flex-col items-start justify-between w-full p-4 lg:flex-row lg:p-8 lg:items-stretch">
             <div class="flex flex-col items-start w-full lg:w-1/3 lg:flex-row lg:items-center">
-                {{-- <div class="flex items-center">
-                    <button
-                        class="p-2 text-gray-600 bg-gray-100 border border-transparent rounded cursor-pointer hover:bg-gray-200 focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
-                        aria-label="Edit Table" role="button">
-                        <img class="dark:hidden"
-                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg1.svg"
-                            alt="Edit">
-                        <img class="hidden dark:block"
-                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg1dark.svg"
-                            alt="Edit">
-                    </button>
-                    <button
-                        class="p-2 mx-2 text-gray-600 bg-gray-100 border border-transparent rounded cursor-pointer hover:bg-gray-200 focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
-                        aria-label="table settings" role="button">
-                        <img class="dark:hidden"
-                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg2.svg"
-                            alt="settings">
-                        <img class="hidden dark:block"
-                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg2dark.svg"
-                            alt="settings">
-                    </button>
-                    <button
-                        class="p-2 mr-2 text-gray-600 bg-gray-100 border border-transparent rounded cursor-pointer hover:bg-gray-200 focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
-                        aria-label="Bookmark" role="button">
-                        <img class="dark:hidden"
-                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg3.svg"
-                            alt="Bookmark">
-                        <img class="hidden dark:block"
-                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg3dark.svg"
-                            alt="Bookmark">
-                    </button>
-                    <button
-                        class="p-2 mr-2 text-gray-600 bg-gray-100 border border-transparent rounded cursor-pointer hover:bg-gray-200 focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
-                        aria-label="copy table" role="button">
-                        <img class="dark:hidden"
-                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg4.svg"
-                            alt="">
-                        <img class="hidden dark:block"
-                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg4dark.svg"
-                            alt="">
-                    </button>
-                    <button
-                        class="p-2 text-red-500 bg-gray-100 border border-transparent rounded cursor-pointer hover:bg-gray-200 focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
-                        aria-label="delete table" role="button">
-                        <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg5.svg"
-                            alt="delete">
-                    </button>
-                </div> --}}
                 <label class="mb-2 text-xl text-bold">Gestionar Usuarios</label>
             </div>
             <div class="flex flex-col items-start justify-end w-full lg:w-2/3 lg:flex-row lg:items-center">
@@ -93,36 +45,34 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user)
+                        @foreach ($users as $usuario)
                             <tr class="h-24 border-b border-gray-300">
                                 <td
                                     class="pl-8 pr-6 text-sm leading-4 tracking-normal text-left text-gray-800 whitespace-no-wrap ">
-                                    {{ $user->id }}</td>
+                                    {{ $usuario->id }}</td>
                                 <td class="pr-6 whitespace-no-wrap">
                                     <div class="flex items-center">
                                         <div class="w-10 h-10 rounded-full ">
-                                            <img src="{{ asset('storage/' . $user->profile_photo_path) }}"
+                                            <img src="{{ asset('storage/' . $usuario->profile_photo_path) }}"
                                                 alt="Display Avatar of Carrie Anthony" role="img"
                                                 class="object-cover w-full h-full overflow-hidden rounded-full shadow" />
                                         </div>
                                         <p class="ml-2 text-sm leading-4 tracking-normal text-gray-800 ">
-                                            {{ $user->nombre }}</p>
+                                            {{ $usuario->nombre }}</p>
                                     </div>
                                 </td>
                                 <td class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap ">
-                                    {{ $user->email }}</td>
+                                    {{ $usuario->email }}</td>
 
                                 <td class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap ">
-                                    {{ $user->getRoleNames()->first() }}</td>
+                                    {{ $usuario->getRoleNames()->first() }}</td>
                                 <td class="pr-6 text-sm leading-4 tracking-normal text-gray-800 whitespace-no-wrap ">
-                                    {{ $user->last_login ? \Carbon\Carbon::parse($user->last_login)->format('H:i:s') : 'Nunca inició sesión' }}
+                                    {{ $usuario->last_login ? \Carbon\Carbon::parse($usuario->last_login)->format('H:i:s') : 'Nunca inició sesión' }}
                                 </td>
-
                                 <td class="pr-6">
-                                    {{ $user->estado }}
-                                    @if ($user->estado)
-                                        <label class="relative inline-flex items-center cursor-pointer"
-                                            wire:click='update_state({{ $user }})'>
+                                    @if ($usuario->estado)
+                                        <div class="{{ $usuario->can('admin.users') ? 'cursor-pointer' : 'cursor-not-allowed' }} relative inline-flex items-center "
+                                            wire:click='updat_state({{ $usuario }})'>
                                             <input type="checkbox" class="sr-only peer" checked>
                                             <div
                                                 class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300
@@ -131,10 +81,10 @@
                                                after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all
                                                 dark:border-gray-600 peer-checked:bg-blue-600">
                                             </div>
-                                        </label>
+                                        </div>
                                     @else
-                                        <label class="relative inline-flex items-center cursor-pointer"
-                                            wire:click='update_state({{ $user }})'>
+                                        <div class="relative inline-flex items-center cursor-pointer"
+                                            wire:click='updat_state({{ $usuario }})'>
                                             <input type="checkbox" class="sr-only peer">
                                             <div
                                                 class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300
@@ -143,7 +93,7 @@
                                            after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all
                                             dark:border-gray-600 peer-checked:bg-blue-600">
                                             </div>
-                                        </label>
+                                        </div>
                                     @endif
                                 </td>
                                 <td>
@@ -157,13 +107,13 @@
                                             src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg1dark.svg"
                                             alt="Edit">
                                     </button>
-                                    <button
+
+                                    <button wire:click='delete_user({{ $usuario }})'
                                         class="p-2 text-red-500 bg-gray-100 border border-transparent rounded cursor-pointer hover:bg-gray-200 focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
                                         aria-label="delete table" role="button">
                                         <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg5.svg"
                                             alt="delete">
                                     </button>
-
                                 </td>
                             </tr>
                         @endforeach
@@ -181,4 +131,6 @@
             @endif
         </div>
     </div>
+
+    @include('livewire.admin.user.modalEdit')
 </div>
