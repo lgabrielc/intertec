@@ -1,5 +1,5 @@
-<div>
-    <div class="bg-white rounded shadow ">
+<div class="relative">
+    <div class="z-0 bg-white rounded shadow">
         <div class="flex flex-col items-start justify-between w-full p-4 lg:flex-row lg:p-8 lg:items-stretch">
             <div class="flex flex-col items-start w-full lg:w-1/3 lg:flex-row lg:items-center">
                 <label class="mb-2 text-xl text-bold">Gestionar Usuarios</label>
@@ -97,7 +97,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <button
+                                    <button wire:click='modal_edit_user({{ $usuario }})'
                                         class="p-2 text-blue-600 bg-gray-100 border border-transparent rounded cursor-pointer hover:bg-gray-200 focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
                                         aria-label="Edit Table" role="button">
                                         <img class="dark:hidden"
@@ -108,7 +108,7 @@
                                             alt="Edit">
                                     </button>
 
-                                    <button wire:click='delete_user({{ $usuario }})'
+                                    <button wire:click='modal_delete_user({{ $usuario->id }})'
                                         class="p-2 text-red-500 bg-gray-100 border border-transparent rounded cursor-pointer hover:bg-gray-200 focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
                                         aria-label="delete table" role="button">
                                         <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg5.svg"
@@ -131,6 +131,33 @@
             @endif
         </div>
     </div>
-
-    @include('livewire.admin.user.modalEdit')
+    <div class="z-10 flex rounded-lg shadow-lg w-96">
+        <div class="flex items-center px-6 py-4 bg-green-600 rounded-l-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="text-white fill-current" viewBox="0 0 16 16" width="20"
+                height="20">
+                <path fill-rule="evenodd"
+                    d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z">
+                </path>
+            </svg>
+        </div>
+        <div
+            class="flex items-center justify-between w-full px-4 py-6 bg-white border border-gray-200 rounded-r-lg border-l-transparent">
+            <div>Se actualizó con éxito</div>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-700 fill-current" viewBox="0 0 16 16"
+                    width="20" height="20">
+                    <path fill-rule="evenodd"
+                        d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="relative">
+        <div class="z-10">Este div está encima</div>
+        <div class="z-0">Este div está debajo</div>
+    </div>
+    @include('livewire.admin.user.modal_edit')
+    @include('livewire.admin.user.modal_alert')
+    @include('livewire.admin.user.modal_delete')
 </div>

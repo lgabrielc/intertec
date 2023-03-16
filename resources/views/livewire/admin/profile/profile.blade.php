@@ -113,7 +113,8 @@
         </div>
         <div class="container w-11/12 mx-auto xl:w-full">
             <div class="flex justify-end w-full py-4 bg-white sm:px-0 ">
-                <button role="button" aria-label="Save form" wire:click='update_profile'
+                <button role="button" wire:loading.attr="disabled" aria-label="Save form"
+                    wire:click='update_profile'
                     class="px-8 py-2 text-sm text-white transition duration-150 ease-in-out bg-indigo-700 rounded focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none hover:bg-indigo-600"
                     type="submit">Guardar</button>
             </div>

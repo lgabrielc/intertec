@@ -28,11 +28,11 @@ class User extends Authenticatable
      */
 
     protected $fillable = [
-        'dni',
-        'nombre',
-        'apellido',
+        'dni', //no se puede cambiar
+        'nombre', //no se puede cambiar
+        'apellido', //no se puede cambiar
         'direccion',
-        'last_login',
+        'last_login', //no se puede cambiar
         'telefono',
         'estado',
         'email',
