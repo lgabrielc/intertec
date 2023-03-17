@@ -14,34 +14,63 @@ class Users extends Component
 
     use WithPagination;
     public $roles;
-    public $user, $nombre, $apellido, $dni, $email, $direccion, $rol, $telefono;
+    public $usuario, $nombre, $apellido, $dni, $email, $direccion, $rol, $telefono, $mensaje;
     public $show_modal_edit = false;
     public $show_modal_delete = false;
-    public $show_model_alert = true;
+    public $show_modal_create = false;
 
     public function mount()
     {
         $this->roles = Role::all()->pluck('name');
     }
+    public function create_user()
+    {
+        $this->validate([
+            'dni' => 'numeric|digits:8|unique:users,dni',
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'direccion' => 'required|min:3',
+            'rol' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'telefono' => 'required|digits:9',
+        ]);
+        User::create([
+            'dni' => $this->dni,
+            'nombre' => $this->nombre,
+            'apellido' => $this->apellido,
+            'direccion' => $this->direccion,
+            'telefono' => $this->telefono,
+            'estado' => 1,
+            'email' => $this->email,
+            'password' => bcrypt($this->dni),
+        ]);
+        $this->show_modal_create = false;
+        $this->emit('alert_success', 'El usuario se creo satisfactoriamente');
+    }
+    public function modal_create_user()
+    {
+        $this->resetErrorBag();
+        $this->reset('usuario', 'nombre', 'apellido', 'dni', 'email', 'direccion', 'rol', 'telefono', 'mensaje', 'rol');
+        $this->show_modal_create = true;
+    }
     public function search_dni()
     {
-        // if (strlen($this->dni) == 8) {
-        //     $factory = new DniFactory();
-        //     $cs = $factory->create();
-        //     $person = $cs->get($this->dni);
-        //     if (!$person) {
-        //         $this->mensaje = 'DNI INVALIDO';
-        //         $this->reset('nombre', 'apellido');
-        //     } else {
-        //         $this->persona = json_decode(json_encode($person), true);
-        //         $this->reset('mensaje');
-        //         $this->nombre = $this->persona['nombres'];
-        //         $this->apellido = $this->persona['apellidoPaterno'] . " " . $this->persona['apellidoMaterno'];
-        //         if (Cliente::where('dni', $this->dni)->exists()) {
-        //             $this->mensaje = 'El DNI: ' . $this->dni . ' Ya está registrado';
-        //         }
-        //     }
-        // }
+        if (strlen($this->dni) == 8) {
+            $factory = new DniFactory();
+            $cs = $factory->create();
+            $person = $cs->get($this->dni);
+            if (!$person) {
+                $this->mensaje = 'DNI INVALIDO';
+                $this->reset('nombre', 'apellido');
+            } else {
+                $person = json_decode(json_encode($person), true);
+                $this->reset('mensaje');
+                $this->nombre = $person['nombres'];
+                $this->apellido = $person['apellidoPaterno'] . " " . $person['apellidoMaterno'];
+            }
+        } else {
+            $this->mensaje = 'DNI INVALIDO';
+        }
     }
     public function edit_user(User $usuario)
     {
@@ -51,11 +80,12 @@ class Users extends Component
         $usuario->assignRole($this->rol);
         $usuario->save();
         $this->show_modal_edit = false;
+        $this->emit('alert_success', 'El usuario se actualizó con éxito');
     }
     public function modal_edit_user(User $usuario)
     {
         $this->resetErrorBag();
-        $this->user = $usuario;
+        $this->usuario = $usuario;
         $this->rol = $usuario->getRoleNames()->first();
         $this->nombre = $usuario->nombre;
         $this->apellido = $usuario->apellido;
@@ -71,11 +101,12 @@ class Users extends Component
         $this->reset('user');
         $this->resetPage();
         $this->show_modal_delete = false;
+        $this->emit('alert_success', 'El usuario se eliminó con éxito');
     }
     public function modal_delete_user(User $usuario)
     {
         $this->show_modal_delete = true;
-        $this->user = $usuario;
+        $this->usuario = $usuario;
     }
     public function updat_state(User $usuario)
     {

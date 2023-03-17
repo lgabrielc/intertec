@@ -24,11 +24,11 @@ class UserSeeder extends Seeder
             'estado' => '1',
             'password' => bcrypt('74712308'),
         ]);
-        $userTecnico = User::create([
+        $userAdministradord = User::create([
             'nombre' => 'Gabriel',
             'apellido' => 'Calloapaza Torres',
             'email' => 'kidmeg200@hotmail.com',
-            'dni' => '40135285',
+            'dni' => '40135281',
             'direccion' => 'Oasis de Villa el Salvador',
             'telefono' => '990039886',
             'estado' => '1',
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
             'nombre' => 'Gabriel',
             'apellido' => 'Calloapaza Torres',
             'email' => 'kidmeg300@hotmail.com',
-            'dni' => '40135285',
+            'dni' => '40135282',
             'direccion' => 'Oasis de Villa el Salvador',
             'telefono' => '990039886',
             'estado' => '1',
@@ -48,7 +48,7 @@ class UserSeeder extends Seeder
             'nombre' => 'Gabriel',
             'apellido' => 'Calloapaza Torres',
             'email' => 'kidmeg400@hotmail.com',
-            'dni' => '40135285',
+            'dni' => '40135283',
             'direccion' => 'Oasis de Villa el Salvador',
             'telefono' => '990039886',
             'estado' => '1',
@@ -58,7 +58,7 @@ class UserSeeder extends Seeder
             'nombre' => 'Gabriel',
             'apellido' => 'Calloapaza Torres',
             'email' => 'kidmeg500@hotmail.com',
-            'dni' => '40135285',
+            'dni' => '40135284',
             'direccion' => 'Oasis de Villa el Salvador',
             'telefono' => '990039886',
             'estado' => '1',
@@ -74,8 +74,8 @@ class UserSeeder extends Seeder
             'estado' => '1',
             'password' => bcrypt('74712308'),
         ]);
-        $userAdmin->assignRole('Administrador');
-        $userTecnico->assignRole('Tecnico');
+        $userAdmin->assignRole('SuperAdmin');
+        $userAdministradord->assignRole('Administrador');
         $userTecnico2->assignRole('Tecnico');
         $userTecnico3->assignRole('Tecnico');
         $userTecnico4->assignRole('Tecnico');

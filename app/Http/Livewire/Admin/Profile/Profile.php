@@ -43,10 +43,12 @@ class Profile extends Component
             $user->password = bcrypt($this->password);
         }
         $user->save();
-        $this->dispatchBrowserEvent('banner-message', [
-            'style' => 'success',
-            'message' => '¡Perfil actualizado exitosamente!'
-        ]);
+        // $this->dispatchBrowserEvent('banner-message', [
+        //     'style' => 'success',
+        //     'message' => '¡Perfil actualizado exitosamente!'
+        // ]);
+        $this->emit('alert_success', 'El perfil se actualizó con éxito');
+
     }
     public function render()
     {

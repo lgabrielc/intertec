@@ -8,7 +8,7 @@
     <x-slot name="footer">
         <div class="flex justify-between w-full">
             <x-button wire:click="$toggle('show_modal_delete')">Cancelar</x-button>
-            <x-danger-button wire:click='delete_user({{ $user }})'>Eliminar</x-button>
+            <x-danger-button wire:click='delete_user({{ $usuario }})'>Eliminar</x-button>
         </div>
     </x-slot>
 </x-confirmation-modal>

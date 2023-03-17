@@ -18,5 +18,10 @@ class StateSeeder extends Seeder
                 'nombre' => 'Activo'
             ]
         );
+        State::create(
+            [
+                'nombre' => 'Deshabilitado'
+            ]
+        );
     }
 }

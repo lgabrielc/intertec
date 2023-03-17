@@ -8,7 +8,7 @@
                 <div class="flex items-center lg:ml-6">
                     <button
                         class="flex items-center h-8 px-5 text-sm text-indigo-700 transition duration-150 ease-in-out bg-gray-200 border border-transparent rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 hover:bg-gray-300">Excel</button>
-                    <button role="button" aria-label="add table"
+                    <button role="button" aria-label="add table" wire:click='modal_create_user'
                         class="flex items-center justify-center w-8 h-8 ml-4 text-white transition duration-150 ease-in-out bg-indigo-700 border border-transparent rounded cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 hover:bg-indigo-600">
                         <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg7.svg"
                             alt="plus">
@@ -53,9 +53,15 @@
                                 <td class="pr-6 whitespace-no-wrap">
                                     <div class="flex items-center">
                                         <div class="w-10 h-10 rounded-full ">
-                                            <img src="{{ asset('storage/' . $usuario->profile_photo_path) }}"
-                                                alt="Display Avatar of Carrie Anthony" role="img"
-                                                class="object-cover w-full h-full overflow-hidden rounded-full shadow" />
+                                            @if ($usuario->profile_photo_path)
+                                                <img src="{{ asset('storage/' . $usuario->profile_photo_path) }}"
+                                                    alt="Display Avatar of Carrie Anthony" role="img"
+                                                    class="object-cover w-full h-full overflow-hidden rounded-full shadow" />
+                                            @else
+                                                <img src="{{ $usuario->profile_photo_url }}"
+                                                    alt="Display Avatar of Carrie Anthony" role="img"
+                                                    class="object-cover w-full h-full overflow-hidden rounded-full shadow" />
+                                            @endif
                                         </div>
                                         <p class="ml-2 text-sm leading-4 tracking-normal text-gray-800 ">
                                             {{ $usuario->nombre }}</p>
@@ -70,31 +76,33 @@
                                     {{ $usuario->last_login ? \Carbon\Carbon::parse($usuario->last_login)->format('H:i:s') : 'Nunca inició sesión' }}
                                 </td>
                                 <td class="pr-6">
-                                    @if ($usuario->estado)
-                                        <div class="{{ $usuario->can('admin.users') ? 'cursor-pointer' : 'cursor-not-allowed' }} relative inline-flex items-center "
-                                            wire:click='updat_state({{ $usuario }})'>
-                                            <input type="checkbox" class="sr-only peer" checked>
-                                            <div
-                                                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300
+                                    @can('admin.users.habilitar')
+                                        @if ($usuario->estado)
+                                            <div class="{{ $usuario->can('admin.users') ? 'cursor-pointer' : 'cursor-not-allowed' }} relative inline-flex items-center "
+                                                wire:click='updat_state({{ $usuario }})'>
+                                                <input type="checkbox" class="sr-only peer" checked>
+                                                <div
+                                                    class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300
                                              dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full
                                               peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px]
                                                after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all
                                                 dark:border-gray-600 peer-checked:bg-blue-600">
+                                                </div>
                                             </div>
-                                        </div>
-                                    @else
-                                        <div class="relative inline-flex items-center cursor-pointer"
-                                            wire:click='updat_state({{ $usuario }})'>
-                                            <input type="checkbox" class="sr-only peer">
-                                            <div
-                                                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300
+                                        @else
+                                            <div class="relative inline-flex items-center cursor-pointer"
+                                                wire:click='updat_state({{ $usuario }})'>
+                                                <input type="checkbox" class="sr-only peer">
+                                                <div
+                                                    class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300
                                          dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full
                                           peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px]
                                            after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all
                                             dark:border-gray-600 peer-checked:bg-blue-600">
+                                                </div>
                                             </div>
-                                        </div>
-                                    @endif
+                                        @endif
+                                    @endcan
                                 </td>
                                 <td>
                                     <button wire:click='modal_edit_user({{ $usuario }})'
@@ -131,33 +139,7 @@
             @endif
         </div>
     </div>
-    <div class="z-10 flex rounded-lg shadow-lg w-96">
-        <div class="flex items-center px-6 py-4 bg-green-600 rounded-l-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="text-white fill-current" viewBox="0 0 16 16" width="20"
-                height="20">
-                <path fill-rule="evenodd"
-                    d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z">
-                </path>
-            </svg>
-        </div>
-        <div
-            class="flex items-center justify-between w-full px-4 py-6 bg-white border border-gray-200 rounded-r-lg border-l-transparent">
-            <div>Se actualizó con éxito</div>
-            <button>
-                <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-700 fill-current" viewBox="0 0 16 16"
-                    width="20" height="20">
-                    <path fill-rule="evenodd"
-                        d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z">
-                    </path>
-                </svg>
-            </button>
-        </div>
-    </div>
-    <div class="relative">
-        <div class="z-10">Este div está encima</div>
-        <div class="z-0">Este div está debajo</div>
-    </div>
+    @include('livewire.admin.user.modal_create')
     @include('livewire.admin.user.modal_edit')
-    @include('livewire.admin.user.modal_alert')
     @include('livewire.admin.user.modal_delete')
 </div>

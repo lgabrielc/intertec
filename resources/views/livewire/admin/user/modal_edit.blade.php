@@ -9,9 +9,11 @@
                  <x-input class="w-full px-4" type='number' nombre='dni' value='{{ $dni }}' disabled />
              </div>
              <div class="my-2">
+                 {{-- {{dd($user)}} --}}
                  <x-label>Rol</x-label>
-                 <select wire:model='rol' name="" id=""
-                     class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                 {{ $usuario->hasRole('SuperAdmin') }}
+                 <select wire:model='rol' name="" id="" {{-- class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 "> --}}
+                     class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 @if ($usuario->hasRole('SuperAdmin')) disabled opacity-50 @endif">
                      @foreach ($roles as $rol)
                          <option value="{{ $rol }}">{{ $rol }}</option>
                      @endforeach
@@ -53,10 +55,10 @@
              <x-button wire:click="$toggle('show_modal_edit')">
                  Cancelar
              </x-button>
-             <x-secondary-button wire:click='reset_password({{ $user }})'>
+             <x-secondary-button wire:click='reset_password({{ $usuario }})'>
                  Restablecer Contraseña
              </x-secondary-button>
-             <x-button wire:click='edit_user({{ $user }})' class="bg-green-600 hover:bg-green-700">Guardar
+             <x-button wire:click='edit_user({{ $usuario }})' class="bg-green-600 hover:bg-green-700">Guardar
              </x-button>
          </div>
      </x-slot>

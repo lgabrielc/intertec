@@ -13,9 +13,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicons/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicons/site.webmanifest') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
+
+<style>
+    .swal2-confirm {
+        background-color: #600557;
+        color: #fff;
+    }
+</style>
 
 <body class="w-full h-full bg-gray-200">
 
@@ -113,8 +121,8 @@
                 <div class="flex flex-col justify-between w-full h-full">
                     <div>
                         <div class="flex items-center justify-between px-8">
-                            <div class="flex items-center w-full h-8 mt-11 mb-2">
-                                <img class="rounded-2xl h-20 md:h-24" src="{{ asset('images/tulogo.png') }}"
+                            <div class="flex items-center w-full h-8 mb-2 mt-11">
+                                <img class="h-20 rounded-2xl md:h-24" src="{{ asset('images/tulogo.png') }}"
                                     alt="logo">
                             </div>
                             <button aria-label="close sidebar" id="closeSideBar"
@@ -342,9 +350,19 @@
                                         </form>
                                     </ul>
                                     <div class="relative">
-                                        <img class="object-cover w-10 h-10 rounded-full"
+                                        {{-- {{dd(auth()->user()->profile_photo_path==null)}} --}}
+                                        @if (!(auth()->user()->profile_photo_path == null))
+                                            <img class="object-cover w-10 h-10 rounded-full"
+                                                src="{{ asset('storage/' . auth()->user()->profile_photo_path) }}"
+                                                alt="display avatar" role="img" />
+                                        @else
+                                            <img class="object-contain w-10 h-10 rounded-full"
+                                                src="{{ Auth::user()->profile_photo_url }}" alt="display avatar"
+                                                role="img" />
+                                        @endif
+                                        {{-- <img class="object-cover w-10 h-10 rounded-full"
                                             src="{{ asset('storage/' . auth()->user()->profile_photo_path) }}"
-                                            alt="display avatar" role="img" />
+                                            alt="display avatar" role="img" /> --}}
                                         <div
                                             class="absolute inset-0 w-2 h-2 m-auto mb-0 mr-0 bg-green-400 border border-white rounded-full">
                                         </div>
@@ -384,7 +402,26 @@
     @stack('modals')
     @livewireScripts
 </body>
+<script>
+    Livewire.on('alert_success', function(message) {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
 
+        Toast.fire({
+            icon: 'success',
+            title: message
+        })
+    })
+</script>
 <script>
     function dropdownHandler(element) {
         let single = element.getElementsByTagName("ul")[0];
