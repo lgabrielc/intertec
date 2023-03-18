@@ -117,12 +117,12 @@
             <div class="absolute w-full h-full bg-gray-800 opacity-50 lg:hidden" onclick="sidebarHandler(false)">
             </div>
             <div
-                class="absolute z-40 w-64 h-full pb-4 transition duration-150 ease-in-out bg-white shadow sm:relative md:w-96 lg:hidden">
+                class="absolute z-40 w-64 h-full pb-2 transition duration-150 ease-in-out bg-white shadow sm:relative  lg:hidden">
                 <div class="flex flex-col justify-between w-full h-full">
                     <div>
                         <div class="flex items-center justify-between px-8">
                             <div class="flex items-center w-full h-8 mb-2 mt-11">
-                                <img class="h-20 rounded-2xl md:h-24" src="{{ asset('images/tulogo.png') }}"
+                                <img class="h-20 rounded-2xl " src="{{ asset('images/tulogo.png') }}"
                                     alt="logo">
                             </div>
                             <button aria-label="close sidebar" id="closeSideBar"
@@ -134,11 +134,12 @@
                         </div>
                         <ul class="py-6">
                             @can('admin.profile')
-                                <a href="{{ route('admin.profile') }}">
-                                    <li
-                                        class="pt-5 pb-4 pl-6 text-base leading-3 tracking-normal text-indigo-700 cursor-pointer focus:text-indigo-700 focus:outline-none">
+                                <a href="{{ route('admin.profile') }}"
+                                    class="{{ Request::is('admin/perfil') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} 
+                                block my-1 py-3 pl-6 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
+                                    <li class="">
                                         <div class="flex items-center">
-                                            <div class="w-6 h-6 md:w-8 md:h-8">
+                                            <div class="w-6 h-6 ">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                     class="icon icon-tabler icon-tabler-user" width="20"
                                                     height="20" viewBox="0 0 24 24" stroke-width="1.5"
@@ -149,15 +150,16 @@
                                                     <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                                                 </svg>
                                             </div>
-                                            <span class="ml-2 text-base xl:text-base md:text-2xl">Perfil</span>
+                                            <span class="ml-2 text-base ">Perfil</span>
                                         </div>
                                     </li>
                                 </a>
                             @endcan
                             @can('admin.dashboard')
-                                <a href="{{ route('admin.dashboard') }}">
-                                    <li
-                                        class="py-2 pl-6 mt-4 mb-4 text-base leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                <a href="{{ route('admin.dashboard') }}"
+                                    class="{{ Request::is('admin/dashboard') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} 
+                                block my-1 py-3 pl-6 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
+                                    <li class="">
                                         <div class="flex items-center">
                                             <div class="w-6 h-6 md:w-8 md:h-8">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -176,21 +178,22 @@
                                                         rx="1" />
                                                 </svg>
                                             </div>
-                                            <span class="ml-2 text-base xl:text-base md:text-2xl">Dashboard</span>
+                                            <span class="ml-2 text-base ">Dashboard</span>
                                         </div>
                                     </li>
                                 </a>
                             @endcan
                             @can('admin.users')
-                                <a href="{{ route('admin.users') }}">
-                                    <li
-                                        class="py-2 pl-6 mb-4 text-base leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                <a href="{{ route('admin.users') }}"
+                                    class="{{ Request::is('admin/usuarios') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} 
+                                block my-1 py-3 pl-6 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
+                                    <li class="">
                                         <div class="flex items-center">
                                             <div class="w-6 h-6 md:w-8 md:h-8">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                     class="icon icon-tabler icon-tabler-users" width="20"
                                                     height="20" viewBox="0 0 24 24" stroke-width="1.5"
-                                                    stroke="#2c3e50" fill="none" stroke-linecap="round"
+                                                    stroke="currentColor" fill="none" stroke-linecap="round"
                                                     stroke-linejoin="round">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                     <circle cx="9" cy="7" r="4" />
@@ -199,15 +202,17 @@
                                                     <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
                                                 </svg>
                                             </div>
-                                            <span class="ml-2 text-base xl:text-base md:text-2xl">Usuarios</span>
+                                            <span class="ml-2 text-base ">Usuarios</span>
                                         </div>
                                     </li>
                                 </a>
                             @endcan
                             @can('admin.resources')
-                                <a href="{{ route('admin.resources') }}">
+                                <a href="{{ route('admin.resources') }}"
+                                    class="{{ Request::is('admin/recursos') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} 
+                                block my-1 py-3 pl-6 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
                                     <li
-                                        class="py-2 pl-6 text-base leading-3 tracking-normal text-gray-600 cursor-pointer hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                                        class="">
                                         <div class="flex items-center">
                                             <div class="w-6 h-6 md:w-8 md:h-8">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -221,7 +226,7 @@
                                                     <path d="M16 11l2 2l4 -4" />
                                                 </svg>
                                             </div>
-                                            <span class="ml-2 text-base xl:text-base md:text-2xl">Recursos</span>
+                                            <span class="ml-2 text-base ">Recursos</span>
                                         </div>
                                     </li>
                                 </a>
@@ -324,7 +329,7 @@
                                                     <circle cx="12" cy="7" r="4" />
                                                     <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                                                 </svg>
-                                                <a href="javascript:void(0)" class="ml-2 text-base">Mi Perfil</a>
+                                                <a href="{{ route('admin.profile') }}" class="ml-2 text-base">Perfil</a>
                                             </div>
                                         </li>
                                         <form method="POST" action="{{ route('logout') }}">

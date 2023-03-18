@@ -34,7 +34,7 @@ class Users extends Component
             'email' => 'required|email|unique:users,email',
             'telefono' => 'required|digits:9',
         ]);
-        User::create([
+        $usuario_creado=User::create([
             'dni' => $this->dni,
             'nombre' => $this->nombre,
             'apellido' => $this->apellido,
@@ -44,6 +44,7 @@ class Users extends Component
             'email' => $this->email,
             'password' => bcrypt($this->dni),
         ]);
+        
         $this->show_modal_create = false;
         $this->emit('alert_success', 'El usuario se creo satisfactoriamente');
     }

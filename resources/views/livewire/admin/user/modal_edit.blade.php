@@ -12,7 +12,7 @@
                  {{-- {{dd($user)}} --}}
                  <x-label>Rol</x-label>
                  {{ $usuario->hasRole('SuperAdmin') }}
-                 <select wire:model='rol' name="" id="" {{-- class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 "> --}}
+                 <select wire:model.defer='rol' name="" id="" {{-- class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 "> --}}
                      class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 @if ($usuario->hasRole('SuperAdmin')) disabled opacity-50 @endif">
                      @foreach ($roles as $rol)
                          <option value="{{ $rol }}">{{ $rol }}</option>
