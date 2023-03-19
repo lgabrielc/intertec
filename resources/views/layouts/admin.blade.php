@@ -26,9 +26,8 @@
 </style>
 
 <body class="w-full h-full bg-gray-200">
-
-    <div class="flex flex-no-wrap">
-        <!-- Sidebar starts -->
+    <div class="flex flex-no-wrap h-screen">
+        {{-- MENU HORIZONTAL --}}
         <div class="absolute hidden w-64 h-screen bg-white shadow lg:relative lg:block">
             <div class="flex items-center w-full h-10 px-6 mt-12 mb-6 ">
                 <img class="rounded-2xl" src="{{ asset('images/tulogo.png') }}" alt="Red Intertec">
@@ -113,9 +112,13 @@
                 @endcan
             </ul>
         </div>
+
+
+
         <div class="absolute z-40 w-full h-screen transform -translate-x-full lg:hidden" id="mobile-nav">
             <div class="absolute w-full h-full bg-gray-800 opacity-50 lg:hidden" onclick="sidebarHandler(false)">
             </div>
+            {{-- ME --}}
             <div
                 class="absolute z-40 w-64 h-full pb-2 transition duration-150 ease-in-out bg-white shadow sm:relative  lg:hidden">
                 <div class="flex flex-col justify-between w-full h-full">
@@ -211,8 +214,7 @@
                                 <a href="{{ route('admin.resources') }}"
                                     class="{{ Request::is('admin/recursos') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} 
                                 block my-1 py-3 pl-6 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
-                                    <li
-                                        class="">
+                                    <li class="">
                                         <div class="flex items-center">
                                             <div class="w-6 h-6 md:w-8 md:h-8">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -235,15 +237,7 @@
                     </div>
                     <div class="w-full">
                         <div class="flex justify-center w-full px-6 mb-4">
-                            <div class="relative w-full">
-                                <div class="absolute inset-0 w-4 h-4 m-auto ml-4 text-gray-600">
-                                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light_with_header_and_icons-svg3.svg"
-                                        alt="Search">
-                                </div>
-                                <input
-                                    class="w-full py-2 pl-10 text-base text-gray-600 placeholder-gray-600 bg-gray-200 rounded focus:outline-none"
-                                    type="text" placeholder="Search" />
-                            </div>
+
                         </div>
                         <div class="border-t border-gray-300">
                             <div class="flex items-center justify-between w-full px-6 pt-1">
@@ -277,21 +271,13 @@
         </div>
         <!--Mobile responsive sidebar-->
         <!-- Sidebar ends -->
-        <div class="w-full">
+        <div class="w-full h-screen">
             <!-- Navigation starts -->
             <nav
                 class="relative z-10 flex items-center justify-end h-16 bg-white shadow lg:items-stretch lg:justify-between">
                 <div class="hidden w-full pr-6 lg:flex">
                     <div class="items-center hidden w-1/2 h-full pl-6 pr-24 lg:flex">
-                        <div class="relative w-full">
-                            <div class="absolute inset-0 w-4 h-4 m-auto ml-4 text-gray-600">
-                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/light_with_header_and_icons-svg3.svg"
-                                    alt="Search">
-                            </div>
-                            <input
-                                class="w-full py-2 pl-12 text-base text-gray-600 placeholder-gray-600 bg-gray-100 border border-gray-100 rounded focus:outline-none focus:border-indigo-700"
-                                type="text" placeholder="Search" />
-                        </div>
+
                     </div>
                     <div class="hidden w-1/2 lg:flex">
                         <div class="flex items-center justify-end w-full pl-8">
@@ -317,21 +303,27 @@
                                 <div class="rounded-full">
                                     <ul
                                         class="absolute left-0 hidden w-full p-2 mt-12 bg-white border-r rounded shadow sm:mt-16">
-                                        <li
+
+                                        <a href="{{ route('admin.profile') }}"
                                             class="flex items-center justify-between w-full text-gray-600 cursor-pointer hover:text-indigo-700">
-                                            <div class="flex items-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-user" width="18"
-                                                    height="18" viewBox="0 0 24 24" stroke-width="1.5"
-                                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" />
-                                                    <circle cx="12" cy="7" r="4" />
-                                                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                                                </svg>
-                                                <a href="{{ route('admin.profile') }}" class="ml-2 text-base">Perfil</a>
-                                            </div>
-                                        </li>
+                                            <li>
+                                                <div class="flex items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="icon icon-tabler icon-tabler-user" width="18"
+                                                        height="18" viewBox="0 0 24 24" stroke-width="1.5"
+                                                        stroke="currentColor" fill="none" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                                        <circle cx="12" cy="7" r="4" />
+                                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                                    </svg>
+                                                    <div class="ml-2 text-base">Perfil</div>
+                                                </div>
+                                            </li>
+                                        </a>
+
+
+
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
                                             <button type="submit">
