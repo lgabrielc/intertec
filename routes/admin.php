@@ -16,6 +16,7 @@ use App\Http\Livewire\Admin\User\Users;
 |
 */
 
+
 Route::get('/perfil', Profile::class)->middleware('can:admin.profile')->name('admin.profile');
 
 Route::get('/dashboard', Dashboard::class)->middleware('can:admin.dashboard')->name('admin.dashboard');
