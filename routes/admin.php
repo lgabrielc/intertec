@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Admin\Dashboard\Dashboard;
 use App\Http\Livewire\Admin\Profile\Profile;
-use App\Http\Livewire\Admin\User\Users;
+use App\Http\Livewire\Admin\Users\Users;
 
 /*
 |--------------------------------------------------------------------------

@@ -2,9 +2,17 @@
     <div>
         <button wire:click="connectToOlt">Conectar a OLT</button>
     </div>
-
+<br><br>
     <div>
+        <div wire:loading>
+            Procesando la conexion con el servidor OLT
+        </div>
+        <br>
         {{ $oltOutput }}
+        <br>
+        Tiempo de ejecución:
+        <br>
+        {{ $executionTime }}
     </div>
     {{-- <div class="bg-white rounded shadow dark:bg-gray-800">
         <div class="flex flex-col items-start justify-between w-full p-4 lg:flex-row lg:p-8 lg:items-stretch">

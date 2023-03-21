@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Admin\User;
+namespace App\Http\Livewire\Admin\Users;
 
 use App\Models\User;
 use Illuminate\Support\Testing\Fakes\Fake;
@@ -14,7 +14,7 @@ class Users extends Component
 
     use WithPagination;
     public $roles;
-    public $usuario, $nombre, $apellido, $dni, $email, $direccion, $rol, $telefono, $mensaje;
+    public $nombre, $apellido, $dni, $email, $direccion, $rol, $telefono, $mensaje, $id_user;
     public $show_modal_edit = false;
     public $show_modal_delete = false;
     public $show_modal_create = false;
@@ -34,7 +34,7 @@ class Users extends Component
             'email' => 'required|email|unique:users,email',
             'telefono' => 'required|digits:9',
         ]);
-        $usuario_creado=User::create([
+        $usuario_creado = User::create([
             'dni' => $this->dni,
             'nombre' => $this->nombre,
             'apellido' => $this->apellido,
@@ -44,14 +44,14 @@ class Users extends Component
             'email' => $this->email,
             'password' => bcrypt($this->dni),
         ]);
-        
+
         $this->show_modal_create = false;
         $this->emit('alert_success', 'El usuario se creo satisfactoriamente');
     }
     public function modal_create_user()
     {
         $this->resetErrorBag();
-        $this->reset('usuario', 'nombre', 'apellido', 'dni', 'email', 'direccion', 'rol', 'telefono', 'mensaje', 'rol');
+        $this->reset('id_user', 'nombre', 'apellido', 'dni', 'email', 'direccion', 'rol', 'telefono', 'mensaje', 'rol');
         $this->show_modal_create = true;
     }
     public function search_dni()
@@ -77,17 +77,18 @@ class Users extends Component
     {
         $usuario->direccion = $this->direccion;
         $usuario->telefono = $this->telefono;
-        $usuario->removeRole($usuario->getRoleNames()->first());
-        $usuario->assignRole($this->rol);
         $usuario->save();
+        $usuario->syncRoles([]);
+        $usuario->assignRole($this->rol);
         $this->show_modal_edit = false;
         $this->emit('alert_success', 'El usuario se actualizó con éxito');
     }
     public function modal_edit_user(User $usuario)
     {
+        $this->reset('id_user', 'nombre', 'apellido', 'dni', 'email', 'direccion', 'rol', 'telefono', 'mensaje', 'rol');
         $this->resetErrorBag();
-        $this->usuario = $usuario;
         $this->rol = $usuario->getRoleNames()->first();
+        $this->id_user = $usuario->id;
         $this->nombre = $usuario->nombre;
         $this->apellido = $usuario->apellido;
         $this->direccion = $usuario->direccion;
@@ -118,6 +119,6 @@ class Users extends Component
     {
         $users = User::orderBy('id', 'asc')->paginate(5);
 
-        return view('livewire.admin.user.users', compact('users'))->layout('layouts.admin');
+        return view('livewire.admin.users.users', compact('users'))->layout('layouts.admin');
     }
 }

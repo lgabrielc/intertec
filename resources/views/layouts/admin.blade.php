@@ -27,7 +27,7 @@
 
 <body class="w-full h-full bg-gray-200">
     <div class="flex flex-no-wrap h-screen">
-        {{-- MENU HORIZONTAL --}}
+        {{-- MENU WEB --}}
         <div class="absolute hidden w-64 h-screen bg-white shadow lg:relative lg:block">
             <div class="flex items-center w-full h-10 px-6 mt-12 mb-6 ">
                 <img class="rounded-2xl" src="{{ asset('images/tulogo.png') }}" alt="Red Intertec">
@@ -113,12 +113,10 @@
             </ul>
         </div>
 
-
-
         <div class="absolute z-40 w-full h-screen transform -translate-x-full lg:hidden" id="mobile-nav">
             <div class="absolute w-full h-full bg-gray-800 opacity-50 lg:hidden" onclick="sidebarHandler(false)">
             </div>
-            {{-- ME --}}
+            {{-- MENU MOBIL --}}
             <div
                 class="absolute z-40 w-64 h-full pb-2 transition duration-150 ease-in-out bg-white shadow sm:relative  lg:hidden">
                 <div class="flex flex-col justify-between w-full h-full">
@@ -277,7 +275,6 @@
                 class="relative z-10 flex items-center justify-end h-16 bg-white shadow lg:items-stretch lg:justify-between">
                 <div class="hidden w-full pr-6 lg:flex">
                     <div class="items-center hidden w-1/2 h-full pl-6 pr-24 lg:flex">
-
                     </div>
                     <div class="hidden w-1/2 lg:flex">
                         <div class="flex items-center justify-end w-full pl-8">

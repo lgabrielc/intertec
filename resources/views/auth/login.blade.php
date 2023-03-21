@@ -13,49 +13,46 @@
 <body class>
     <div class="lg:flex">
         <div class="lg:w-full xl:max-w-screen-sm">
-            <div class="py-12 bg-indigo-100 lg:bg-white flex justify-center  lg:px-12  xl:px-24 xl:max-w-2xl">
-                <div class="cursor-pointer flex items-center">
+            <div class="flex justify-center py-12 bg-indigo-100 lg:bg-white lg:px-12 xl:px-24 xl:max-w-2xl">
+                <div class="flex items-center cursor-pointer">
                     <img src="{{ asset('images/tulogo.png') }}" alt="Login Red Intertec "
-                        class="items-center w-64 object-center rounded-2xl">
+                        class="items-center object-center w-64 rounded-2xl">
                 </div>
             </div>
-            <div class="mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
+            <div class="px-12 mt-10 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
                 <h2
-                    class="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
-                    xl:text-bold">
-                    Log in
+                    class="text-4xl font-semibold text-center text-indigo-900 font-display lg:text-left xl:text-5xl xl:text-bold">
+                    Acceso al Sistema
                 </h2>
                 <div class="mt-12">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div>
-                            <div class="text-md font-bold text-gray-700 tracking-wide mb-2">Email</div>
+                            <div class="mb-2 font-bold tracking-wide text-gray-700 text-md">Email</div>
                             <input
-                                class="px-6 rounded-2xl w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                class="w-full px-6 py-2 text-lg border-b border-gray-300 rounded-2xl focus:outline-none focus:border-indigo-500"
                                 type="email" name="email" :value="old('email')" placeholder="ejemplo@hotmail.com"
                                 required autofocus autocomplete="username">
 
                         </div>
                         <div class="mt-8">
-                            <div class="flex justify-between items-center">
-                                <div class="text-md font-bold text-gray-700 tracking-wide mb-2">
+                            <div class="flex items-center justify-between">
+                                <div class="mb-2 font-bold tracking-wide text-gray-700 text-md">
                                     Password
                                 </div>
                             </div>
                             <input id="password"
-                                class="px-6 rounded-2xl w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                class="w-full px-6 py-2 text-lg border-b border-gray-300 rounded-2xl focus:outline-none focus:border-indigo-500"
                                 type="password" name="password" required placeholder="Enter your password"
                                 autocomplete="current-password">
 
                         </div>
                         @error('email')
-                            <div class="text-red-600 my-2">{{ $message }}</div>
+                            <div class="my-2 text-red-600">{{ $message }}</div>
                         @enderror
                         <div class="mt-10">
                             <button
-                                class="bg-indigo-500 text-gray-100 p-4 w-full rounded-full tracking-wide
-                                font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600
-                                shadow-lg">
+                                class="w-full p-4 font-semibold tracking-wide text-gray-100 bg-indigo-500 rounded-full shadow-lg font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600">
                                 Iniciar Sesión
                             </button>
                         </div>
@@ -64,8 +61,8 @@
                 </div>
             </div>
         </div>
-        <div class="hidden lg:flex items-center justify-center bg-indigo-100 flex-1 h-screen">
-            <div class="max-w-xs transform duration-200 hover:scale-110 cursor-pointer">
+        <div class="items-center justify-center flex-1 hidden h-screen bg-indigo-100 lg:flex">
+            <div class="max-w-xs duration-200 transform cursor-pointer hover:scale-110">
                 <svg class="w-5/6 mx-auto" xmlns="http://www.w3.org/2000/svg" id="f080dbb7-9b2b-439b-a118-60b91c514f72"
                     data-name="Layer 1" viewBox="0 0 528.71721 699.76785">
                     <title>Login</title>

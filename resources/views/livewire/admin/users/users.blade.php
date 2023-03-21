@@ -78,15 +78,14 @@
                                 <td class="pr-6">
                                     @if (auth()->user()->can('admin.users.habilitar'))
                                         @if ($usuario->estado)
-                                            <div class="{{ $usuario->can('admin.users') ? 'cursor-pointer' : 'cursor-not-allowed' }} relative inline-flex items-center "
+                                            <div class="relative inline-flex items-center cursor-pointer "
                                                 wire:click='updat_state({{ $usuario }})'>
                                                 <input type="checkbox" class="sr-only peer" checked>
                                                 <div
                                                     class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300
-                                            dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full
-                                            peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px]
+                                             rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px]
                                             after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all
-                                            dark:border-gray-600 peer-checked:bg-blue-600">
+                                             peer-checked:bg-blue-600">
                                                 </div>
                                             </div>
                                         @else
@@ -95,24 +94,19 @@
                                                 <input type="checkbox" class="sr-only peer">
                                                 <div
                                                     class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300
-                                    dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full
-                                          peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px]
+                                     rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px]
                                           after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all
-                                          dark:border-gray-600 peer-checked:bg-blue-600">
+                                           peer-checked:bg-blue-600">
                                                 </div>
                                             </div>
                                         @endif
                                     @endif
                                 </td>
                                 <td>
-                                    <button wire:click='modal_edit_user({{ $usuario }})'
+                                    <button wire:click='modal_edit_user({{ $usuario->id }})'
                                         class="p-2 text-blue-600 bg-gray-100 border border-transparent rounded cursor-pointer hover:bg-gray-200 focus:outline-none focus:border-gray-800 focus:shadow-outline-gray"
                                         aria-label="Edit Table" role="button">
-                                        <img class="dark:hidden"
-                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg1.svg"
-                                            alt="Edit">
-                                        <img class="hidden dark:block"
-                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg1dark.svg"
+                                        <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/compact_table_with_actions_and_select-svg1.svg"
                                             alt="Edit">
                                     </button>
 
@@ -139,7 +133,7 @@
             @endif
         </div>
     </div>
-    @include('livewire.admin.user.modal_create')
-    @include('livewire.admin.user.modal_edit')
-    @include('livewire.admin.user.modal_delete')
+    @include('livewire.admin.users.modal_create')
+    @include('livewire.admin.users.modal_edit')
+    @include('livewire.admin.users.modal_delete')
 </div>
