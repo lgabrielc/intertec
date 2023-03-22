@@ -61,7 +61,7 @@ class Users extends Component
             $cs = $factory->create();
             $person = $cs->get($this->dni);
             if (!$person) {
-                $this->mensaje = 'DNI INVALIDO';
+                $this->mensaje = 'El dni es invalido';
                 $this->reset('nombre', 'apellido');
             } else {
                 $person = json_decode(json_encode($person), true);
@@ -70,7 +70,7 @@ class Users extends Component
                 $this->apellido = $person['apellidoPaterno'] . " " . $person['apellidoMaterno'];
             }
         } else {
-            $this->mensaje = 'DNI INVALIDO';
+            $this->mensaje = 'El dni es invalido';
         }
     }
     public function edit_user(User $usuario)

@@ -15,7 +15,7 @@
             </div>
             <div class="my-2 ">
                 <x-label>Opcion</x-label>
-                <x-button wire:click='search_dni' class="w-full py-3 bg-blue-500 hover:bg-blue-600">Buscar datos
+                <x-button wire:click='search_dni' class="w-full py-1 bg-blue-500 hover:bg-blue-600">Buscar datos
                 </x-button>
                 <div class="mx-1 text-red-500">
                     {{ $mensaje }}
