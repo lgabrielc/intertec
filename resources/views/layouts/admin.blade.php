@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Intertec</title>
@@ -111,7 +112,7 @@
                                     </svg>
                                 </div>
                                 <span class="ml-2">Recursos Fibra</span>
-                                <svg class="absolute top-0 right-0 mr-3 mt-3 h-4 w-4 fill-current"
+                                <svg class="absolute top-0 right-0 w-4 h-4 mt-3 mr-3 fill-current"
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path :class="{ 'hidden': isOpen, 'inline-flex': !isOpen }" class="inline-flex"
                                         fill-rule="evenodd" d="M10 16l-6-6h12l-6 6z" />
@@ -122,7 +123,7 @@
 
                         </a>
                         <div x-show="isOpen" @click.prevent="isOpen = !isOpen"
-                            class=" block my-1 py-3 pl-2 mx-2 rounded-xl text-base leading-3 tracking-normal cursor-pointer focus:outline-none relative"">
+                            class="relative block py-3 pl-2 mx-2 my-1 text-base leading-3 tracking-normal cursor-pointer  rounded-xl focus:outline-none"">
                             <!-- Agregue aquí el contenido de su dropdown -->aa
                         </div>
                     </div>
@@ -136,7 +137,7 @@
             <div class="absolute w-full h-full bg-gray-800 opacity-50 lg:hidden" onclick="sidebarHandler(false)">
             </div>
             <div
-                class="absolute z-40 w-64 h-full pb-2 transition duration-150 ease-in-out bg-white shadow sm:relative  lg:hidden">
+                class="absolute z-40 w-64 h-full pb-2 transition duration-150 ease-in-out bg-white shadow sm:relative lg:hidden">
                 <div class="flex flex-col justify-between w-full h-full">
                     <div>
                         <div class="flex items-center justify-between px-8">
