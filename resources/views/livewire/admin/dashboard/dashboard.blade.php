@@ -2,10 +2,12 @@
     <div>
         <button wire:click="connectToOlt">Conectar a OLT</button>
     </div>
-<br><br>
+    <br><br>
     <div>
         <div wire:loading>
-            Procesando la conexion con el servidor OLT
+            <div class="overlay">
+                <i class="fas fa-2x fa-sync-alt fa-spin"></i>
+            </div>
         </div>
         <br>
         {{ $oltOutput }}

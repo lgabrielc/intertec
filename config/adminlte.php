@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Red </b>Intertec',
-    'logo_img' => 'images/tulogo.png',
+    'logo' => '<b>SYS </b>Intertec',
+    'logo_img' => 'images/logoadminlte.png',
     'logo_img_class' => 'brand-image img-circle elevation-1',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -107,7 +107,7 @@ return [
     */
 
     'preloader' => [
-        'enabled' => true,
+        'enabled' => false,
         'img' => [
             'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
             'alt' => 'AdminLTE Preloader Image',
@@ -320,17 +320,20 @@ return [
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Perfil',
+            // 'url'  => 'admin/settings',
+            'route' => 'admin.profile',
+            'can' => 'admin.profile',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'text' => 'Usuarios',
+            'route' => 'admin.users',
+            'can' => 'admin.users',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text'    => 'multilevel',
+            'text'    => 'Recursos',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
@@ -466,12 +469,12 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'asset' => true,
+                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@11.7.3',
                 ],
             ],
         ],
@@ -537,5 +540,5 @@ return [
     |
     */
 
-    'livewire' => true,
+    'livewire' => false,
 ];

@@ -48,10 +48,9 @@ class Profile extends Component
         //     'message' => '¡Perfil actualizado exitosamente!'
         // ]);
         $this->emit('alert_success', 'El perfil se actualizó con éxito');
-
     }
     public function render()
     {
-        return view('livewire.admin.profile.profile')->layout('layouts.admin');
+        return view('livewire.admin.profile.profile');
     }
 }

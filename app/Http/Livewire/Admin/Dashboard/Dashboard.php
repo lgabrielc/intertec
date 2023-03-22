@@ -20,12 +20,11 @@ class Dashboard extends Component
         $oltUsername = 'nocarapasys2';
         $oltPassword = 'nocarapasys123';
 
-        $ssh = new SSH2($oltHost);
+        $ssh = new SSH2($oltHost, '2322');
         // $ssh->login($oltUsername, $oltPassword);
         if (!$ssh->login($oltUsername, $oltPassword)) {
             throw new \Exception('Login Failed');
         }
-
         // Ejecuta el comando "enable" en el dispositivo OLT
         $ssh->write("enable\n");
         $ssh->write("config\n");
@@ -58,6 +57,6 @@ class Dashboard extends Component
     }
     public function render()
     {
-        return view('livewire.admin.dashboard.dashboard')->layout('layouts.admin');
+        return view('livewire.admin.dashboard.dashboard');
     }
 }

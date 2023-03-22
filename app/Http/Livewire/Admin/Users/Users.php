@@ -108,7 +108,7 @@ class Users extends Component
     public function modal_delete_user(User $usuario)
     {
         $this->show_modal_delete = true;
-        $this->usuario = $usuario;
+        // $this->usuario = $usuario;
     }
     public function updat_state(User $usuario)
     {
@@ -119,6 +119,6 @@ class Users extends Component
     {
         $users = User::orderBy('id', 'asc')->paginate(5);
 
-        return view('livewire.admin.users.users', compact('users'))->layout('layouts.admin');
+        return view('livewire.admin.users.users', compact('users'));
     }
 }
