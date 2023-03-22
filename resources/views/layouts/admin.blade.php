@@ -27,6 +27,7 @@
 
 <body class="w-full h-full bg-gray-200">
     <div class="flex flex-no-wrap h-screen">
+
         {{-- MENU WEB --}}
         <div class="absolute hidden w-64 h-screen bg-white shadow lg:relative lg:block">
             <div class="flex items-center w-full h-10 px-6 mt-12 mb-6 ">
@@ -36,7 +37,7 @@
                 @can('admin.profile')
                     <a href="{{ route('admin.profile') }}"
                         class="{{ Request::is('admin/perfil') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} 
-                         block my-1 py-3 pl-6 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
+                         block my-1 py-3 pl-2 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
                         <li class="flex items-center">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user"
@@ -54,7 +55,7 @@
                 @can('admin.dashboard')
                     <a href="{{ route('admin.dashboard') }}"
                         class="{{ Request::is('admin/dashboard') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} 
-                        block my-1 py-3 pl-6 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
+                        block my-1 py-3 pl-2 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
                         <li class="flex items-center">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid"
@@ -74,7 +75,7 @@
                 @can('admin.users')
                     <a href="{{ route('admin.users') }}"
                         class="{{ Request::is('admin/usuarios') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} 
-                        block my-1 py-3 pl-6 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
+                        block my-1 py-3 pl-2 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
                         <li class="flex items-center">
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users"
@@ -91,32 +92,49 @@
                         </li>
                     </a>
                 @endcan
+
+                {{-- href="{{ route('admin.resources') }}" --}}
                 @can('admin.resources')
-                    <a href="{{ route('admin.resources') }}"
-                        class="{{ Request::is('admin/recursos') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} 
-                        block my-1 py-3 pl-6 mx-2 rounded-xl text-base  leading-3 tracking-normal  cursor-pointer  focus:outline-none">
-                        <li class="flex items-center">
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-check"
-                                    width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <circle cx="9" cy="7" r="4" />
-                                    <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                                    <path d="M16 11l2 2l4 -4" />
+                    <div x-data="{ isOpen: false }" x-on:click="isOpen = ! isOpen" >
+                        <a
+                            class="{{ Request::is('admin/recursos') ? 'bg-blue-600 text-white hover:bg-blue-500' : 'text-black hover:bg-gray-300' }} block my-1 py-3 pl-2 mx-2 rounded-xl text-base leading-3 tracking-normal cursor-pointer focus:outline-none relative">
+                            <li class="flex items-center">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="icon icon-tabler icon-tabler-user-check" width="20" height="20"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                        <path d="M16 11l2 2l4 -4" />
+                                    </svg>
+                                </div>
+                                <span class="ml-2">Recursos Fibra</span>
+                                <svg class="absolute top-0 right-0 mr-3 mt-3 h-4 w-4 fill-current"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path :class="{ 'hidden': isOpen, 'inline-flex': !isOpen }" class="inline-flex"
+                                        fill-rule="evenodd" d="M10 16l-6-6h12l-6 6z" />
+                                    <path :class="{ 'hidden': !isOpen, 'inline-flex': isOpen }" class="inline-flex"
+                                        fill-rule="evenodd" d="M10 6l-6 6h12l-6-6z" />
                                 </svg>
-                            </div>
-                            <span class="ml-2">Recursos</span>
-                        </li>
-                    </a>
+                            </li>
+
+                        </a>
+                        <div x-show="isOpen" @click.prevent="isOpen = !isOpen"
+                            class=" block my-1 py-3 pl-2 mx-2 rounded-xl text-base leading-3 tracking-normal cursor-pointer focus:outline-none relative"">
+                            <!-- Agregue aquí el contenido de su dropdown -->aa
+                        </div>
+                    </div>
                 @endcan
             </ul>
         </div>
+        {{-- FIN MENU WEB --}}
 
+        {{-- MENU MOBIL --}}
         <div class="absolute z-40 w-full h-screen transform -translate-x-full lg:hidden" id="mobile-nav">
             <div class="absolute w-full h-full bg-gray-800 opacity-50 lg:hidden" onclick="sidebarHandler(false)">
             </div>
-            {{-- MENU MOBIL --}}
             <div
                 class="absolute z-40 w-64 h-full pb-2 transition duration-150 ease-in-out bg-white shadow sm:relative  lg:hidden">
                 <div class="flex flex-col justify-between w-full h-full">
@@ -267,7 +285,7 @@
                 </div>
             </div>
         </div>
-        <!--Mobile responsive sidebar-->
+        <!--FIN MENU MOBIL-->
         <!-- Sidebar ends -->
         <div class="w-full h-screen">
             <!-- Navigation starts -->
