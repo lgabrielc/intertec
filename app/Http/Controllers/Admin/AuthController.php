@@ -23,4 +23,8 @@ class AuthController extends Controller
     {
         return view('livewire.admin.recursos.index');
     }
+    public function index_recursos_mikrotik()
+    {
+        return view('livewire.admin.gestionar-recursos.index');
+    }
 }

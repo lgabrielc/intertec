@@ -341,8 +341,10 @@ return [
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Mikrotik',
+                    'route' => 'admin.recursos.mikrotik',
+                    // 'can' => 'admin.users',
+                    'icon' => 'fas fa-fw fa-lock',
                 ],
                 [
                     'text'    => 'level_one',
