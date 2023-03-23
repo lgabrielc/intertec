@@ -11,8 +11,7 @@
              <div class="my-2">
                  <x-label>Rol</x-label>
                  <select {{ $rol === 'SuperAdmin' ? 'disabled' : '' }} wire:model.defer='rol' name=""
-                     class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 
-                     ">
+                     class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 ">
                      @foreach ($roles as $rol)
                          <option value="{{ $rol }}">{{ $rol }}</option>
                      @endforeach
@@ -32,10 +31,10 @@
                      value='{{ $apellido }}' disabled />
              </div>
          </div>
-         <div class="grid grid-cols-1 space-x-0 lg:space-x-4 lg:grid-cols-2">
+         <div class="grid grid-cols-1 space-x-0 lg:space-x-4 lg:grid-cols-1">
              <div class="my-2">
-                 <x-label>Emaik</x-label>
-                 <x-input wire:model='Emaik' type="email" name="email" class="w-full px-4"
+                 <x-label>Email</x-label>
+                 <x-input wire:model='email' type="email" name="email" class="w-full px-4"
                      value='{{ $email }}' disabled />
              </div>
          </div>

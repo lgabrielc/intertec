@@ -16,7 +16,6 @@ class Users extends Component
     public $roles;
     public $nombre, $apellido, $dni, $email, $direccion, $rol, $telefono, $mensaje, $id_user;
     public $show_modal_edit = false;
-    public $show_modal_delete = false;
     public $show_modal_create = false;
 
     public function mount()
@@ -44,7 +43,7 @@ class Users extends Component
             'email' => $this->email,
             'password' => bcrypt($this->dni),
         ]);
-
+        $usuario_creado->assignRole($this->rol);
         $this->show_modal_create = false;
         $this->emit('alert_success', 'El usuario se creo satisfactoriamente');
     }
@@ -100,15 +99,8 @@ class Users extends Component
     public function delete_user(User $usuario)
     {
         $usuario->delete();
-        $this->reset('user');
         $this->resetPage();
-        $this->show_modal_delete = false;
         $this->emit('alert_success', 'El usuario se eliminó con éxito');
-    }
-    public function modal_delete_user(User $usuario)
-    {
-        $this->show_modal_delete = true;
-        // $this->usuario = $usuario;
     }
     public function updat_state(User $usuario)
     {

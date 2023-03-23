@@ -71,4 +71,17 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function adminlte_desc()
+    {
+        return Auth()->user()->getRoleNames()->first();
+    }
+    public function adminlte_image()
+    {
+        return asset('storage/' . auth()->user()->profile_photo_path);
+    }
+    public function adminlte_profile_url()
+    {
+        return 'admin/perfil';
+    }
 }
