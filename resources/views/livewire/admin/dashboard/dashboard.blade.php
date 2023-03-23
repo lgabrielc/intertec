@@ -14,6 +14,7 @@
         <br>
         Tiempo de ejecución:
         <br>
+        
         {{ $executionTime }}
     </div>
     {{-- <div class="bg-white rounded shadow dark:bg-gray-800">
