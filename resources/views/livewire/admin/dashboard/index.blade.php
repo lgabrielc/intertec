@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 @livewireStyles
 
 
@@ -20,16 +21,13 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
     @livewire('admin.dashboard.dashboard')
 @stop
 @livewireScripts
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
 @stop
 
 @section('js')
-    <script>
-        console.log('Hi!');
-    </script>
+ 
 @stop
+

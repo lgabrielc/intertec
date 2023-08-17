@@ -43,14 +43,14 @@
                     @endif
                     <input wire:model="imageProfile" type="file" accept=".jpg, .jpeg, .png"
                         id="profile-picture-input" type="file" style="display:none;"
-                        onchange="handleProfilePictureChange(event)">
+                        onchange="handleProfilePictureChange(event)" disabled>
                 </div>
                 <div class="px-4 mx-auto bg-white rounded ">
                     <div class="flex flex-col w-full mt-28 xl:w-2/6 lg:w-1/2 md:w-1/2">
                         <label for="usuario" class="pb-1 text-sm font-bold text-gray-800 ">Email</label>
                         <input tabindex="0" type="text" id="usuario" name="usuario"
                             class="py-2 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
-                            wire:model='email' placeholder="ejemplo@hotmai.com" />
+                            wire:model='email' placeholder="ejemplo@hotmai.com" disabled/>
                         @error('email')
                             <div class="text-red-600">{{ $message }}</div>
                         @enderror
@@ -59,7 +59,7 @@
                         <label for="usuario" class="pb-1 text-sm font-bold text-gray-800 ">Password</label>
                         <input tabindex="0" type="password" id="usuario" name="usuario"
                             class="py-2 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
-                            wire:model='password' />
+                            wire:model='password' disabled/>
                         @error('password')
                             <div class="text-red-600">{{ $message }}</div>
                         @enderror
@@ -101,7 +101,7 @@
                                         class="pb-1 text-sm font-bold text-gray-800 ">Dirección</label>
                                     <input tabindex="0" type="text" id="StreetAddress" name="streetAddress"
                                         class="py-2 pl-3 text-sm text-gray-600 placeholder-gray-500 bg-transparent border border-gray-300 rounded shadow-sm focus:outline-none focus:border-indigo-700 "
-                                        wire:model='direccion' />
+                                        wire:model='direccion' disabled/>
                                     @error('direccion')
                                         <div class="text-red-600">{{ $message }}</div>
                                     @enderror

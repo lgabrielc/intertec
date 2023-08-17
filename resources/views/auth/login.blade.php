@@ -28,7 +28,7 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div>
-                            <div class="mb-2 font-bold tracking-wide text-gray-700 text-md">Email</div>
+                            <div class="mb-2 font-bold tracking-wide text-gray-700 text-md">Correo</div>
                             <input
                                 class="w-full px-6 py-2 text-lg border-b border-gray-300 rounded-2xl focus:outline-none focus:border-indigo-500"
                                 type="email" name="email" :value="old('email')" placeholder="ejemplo@hotmail.com"
@@ -38,7 +38,7 @@
                         <div class="mt-8">
                             <div class="flex items-center justify-between">
                                 <div class="mb-2 font-bold tracking-wide text-gray-700 text-md">
-                                    Password
+                                    Contraseña
                                 </div>
                             </div>
                             <input id="password"
