@@ -14,12 +14,18 @@
                 @enderror
             </div>
             <div class="my-2 ">
-                <x-label>Opcion</x-label>
-                <x-button wire:click='search_dni' class="w-full py-1 bg-blue-500 hover:bg-blue-600">Buscar datos
-                </x-button>
-                <div class="mx-1 text-red-500">
-                    {{ $mensaje }}
+                <div class="flex flex-row">
+                    <x-label>Opcion</x-label>
+                    <div class="mx-1 text-red-500 ">
+                        {{ $mensaje }}
+                    </div>
                 </div>
+                {{-- <x-button wire:click='search_dni' class="w-full py-1 bg-blue-500 hover:bg-blue-600">Buscar datos
+                </x-button> --}}
+                <button style="border-color: rgb(209, 213, 219,1)" wire:click='search_dni'
+                    class="w-full h-10 py-1 text-base border-4 rounded-md hover:bg-gray-100">Buscar
+                    datos</button>
+
             </div>
         </div>
         <div class="grid grid-cols-1 space-x-0 lg:space-x-4 lg:grid-cols-2">
@@ -29,7 +35,6 @@
 
             </div>
             <div class="my-2">
-
                 <x-label>Apellido</x-label>
                 <x-input type="text" name="apellido" class="w-full px-4" value='{{ $apellido }}' disabled />
             </div>
@@ -70,8 +75,7 @@
 
                 <x-label>Rol</x-label>
                 <select wire:model.defer='rol'
-                    class="w-full px-5 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                    name="" id="">
+                    class="w-full px-3 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                     <option value="">Escoja un Rol</option>
                     @foreach ($roles as $rol)
                         <option value="{{ $rol }}">{{ $rol }}</option>
@@ -84,18 +88,13 @@
                 @enderror
             </div>
         </div>
-        {{-- <x-label>Contraseña</x-label>
-        <x-input type="password" name="password" class="w-full" /> --}}
-
     </x-slot>
     <x-slot name="footer">
-        <div class="flex flex-col justify-between w-full space-y-2 sm:flex-row sm:space-y-0">
-            <x-button wire:click="$toggle('show_modal_create')">
-                Cancelar
-            </x-button>
-
-            <x-button wire:click='create_user' class="bg-green-600 hover:bg-green-700">Guardar
-            </x-button>
+        <div class="flex flex-col justify-between w-full space-y-2 sm:flex-row sm:space-y-0 gap-x-4">
+            <button wire:click="$toggle('show_modal_create')"
+                class="w-full h-10 py-1 text-base border rounded-2xl hover:bg-gray-300">Cancelar</button>
+            <button wire:click='create_user' wire:click='search_dni'
+                class="w-full h-10 py-1 text-base font-bold text-white bg-blue-500 border rounded-2xl hover:bg-blue-600">Guardar</button>
         </div>
     </x-slot>
 </x-dialog-modal>

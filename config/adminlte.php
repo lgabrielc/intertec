@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'admin/perfil',
+    'dashboard_url' => 'demo/dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -302,7 +302,8 @@ return [
         ],
         [
             'text' => 'Perfil',
-            'url'  => 'http://my.domain.com/user/profile',
+            'url'  => 'admin.profile',
+            'can' => 'admin.profile',
             'icon' => 'fas fa-fw fa-user',
         ],
         // Sidebar items:
